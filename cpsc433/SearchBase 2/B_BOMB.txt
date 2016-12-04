@@ -1,0 +1,888 @@
+person(Person_0)
+secretary(Person_0)
+group(Person_0, Group_0)
+hacker(Person_0)
+works-with(Person_0, {Person_90, Person_84, Person_29, Person_43, Person_7, Person_50, Person_15, Person_97, Person_61, Person_34, Person_45, Person_78, Person_81, Person_95, Person_17, Person_42, Person_92, Person_25, Person_28, Person_69, Person_60, Person_44, Person_27, Person_98, Person_59, Person_79, Person_74, Person_11, Person_75, Person_96, Person_53, Person_82, Person_19, Person_21, Person_55, Person_24, Person_93, Person_32, Person_20, Person_54, Person_6, Person_99, Person_52, Person_2, Person_40, Person_23, Person_3})
+
+person(Person_1)
+manager(Person_1)
+group(Person_1, Group_0)
+works-with(Person_1, {Person_48, Person_14, Person_90, Person_57, Person_11, Person_31, Person_80, Person_87, Person_42, Person_47, Person_7, Person_46, Person_9, Person_41, Person_74, Person_34, Person_20, Person_44, Person_88, Person_68, Person_18, Person_75, Person_36})
+
+person(Person_2)
+secretary(Person_2)
+group(Person_2, Group_0)
+works-with(Person_2, {Person_49, Person_83, Person_33, Person_30, Person_12, Person_76, Person_69, Person_71, Person_56, Person_90, Person_34, Person_89, Person_74, Person_65, Person_70, Person_25, Person_3, Person_50})
+
+person(Person_3)
+manager(Person_3)
+group(Person_3, Group_0)
+works-with(Person_3, {Person_86, Person_9, Person_19})
+
+person(Person_4)
+group(Person_4, Group_0)
+smoker(Person_4)
+project(Person_4, Project_2)
+works-with(Person_4, {Person_58, Person_25, Person_99, Person_87, Person_94, Person_35, Person_95, Person_26, Person_50, Person_79, Person_91, Person_52, Person_77, Person_55, Person_93, Person_90, Person_84, Person_33, Person_78, Person_81, Person_49, Person_74, Person_69, Person_9, Person_41, Person_70, Person_45, Person_46, Person_71, Person_83, Person_16, Person_40, Person_7, Person_62, Person_32, Person_34, Person_18, Person_12, Person_48, Person_47, Person_85, Person_51, Person_65, Person_15, Person_42, Person_11, Person_72, Person_68, Person_21, Person_92, Person_8, Person_53})
+
+person(Person_5)
+group(Person_5, Group_0)
+project(Person_5, Project_1)
+works-with(Person_5, {Person_67, Person_40, Person_13, Person_29, Person_15, Person_7, Person_99, Person_45, Person_59, Person_41, Person_17, Person_65, Person_56, Person_26, Person_70, Person_39, Person_98, Person_76, Person_87, Person_64, Person_44, Person_89})
+
+person(Person_6)
+researcher(Person_6)
+group(Person_6, Group_0)
+project(Person_6, Project_0)
+works-with(Person_6, {Person_70, Person_30, Person_50, Person_59, Person_11, Person_42, Person_79, Person_17, Person_41, Person_32, Person_99, Person_68, Person_44, Person_14, Person_45, Person_51, Person_55, Person_77, Person_36, Person_72, Person_7, Person_93, Person_20, Person_86, Person_22, Person_63, Person_38, Person_96, Person_94, Person_43, Person_54, Person_62, Person_60, Person_92, Person_12, Person_81, Person_98, Person_66, Person_48, Person_87, Person_82, Person_67, Person_57, Person_49, Person_28, Person_65, Person_89, Person_83, Person_74, Person_35, Person_91, Person_76, Person_80, Person_64, Person_31, Person_10, Person_58, Person_34, Person_46, Person_84, Person_24, Person_88, Person_23, Person_8, Person_85, Person_16, Person_13, Person_33, Person_40})
+
+person(Person_7)
+group(Person_7, Group_0)
+smoker(Person_7)
+project(Person_7, Project_6)
+works-with(Person_7, {Person_84, Person_49, Person_29, Person_64, Person_59, Person_46, Person_81, Person_90, Person_17, Person_38, Person_15, Person_26, Person_96, Person_53, Person_63, Person_77, Person_12, Person_70, Person_85, Person_40, Person_71, Person_89, Person_76, Person_66, Person_80, Person_91, Person_62, Person_23, Person_72, Person_48, Person_11, Person_31, Person_50, Person_34, Person_18, Person_43, Person_24, Person_69, Person_93, Person_41, Person_88, Person_36, Person_44, Person_61, Person_20, Person_27, Person_99, Person_52})
+
+person(Person_8)
+group(Person_8, Group_0)
+project(Person_8, Project_3)
+works-with(Person_8, {Person_45, Person_9, Person_23, Person_61, Person_31, Person_97, Person_53, Person_69, Person_59, Person_70, Person_43, Person_81, Person_28, Person_56, Person_67, Person_25, Person_44, Person_19, Person_35, Person_79, Person_75, Person_42, Person_10, Person_98, Person_77, Person_22, Person_86, Person_12, Person_48, Person_60, Person_27, Person_39, Person_15, Person_95, Person_36, Person_11, Person_99, Person_65, Person_18, Person_82, Person_26, Person_55, Person_34, Person_63, Person_68, Person_24, Person_62, Person_20, Person_13})
+
+person(Person_9)
+secretary(Person_9)
+group(Person_9, Group_0)
+smoker(Person_9)
+works-with(Person_9, {Person_87, Person_44, Person_33, Person_29, Person_86, Person_30, Person_55, Person_95, Person_28, Person_31, Person_26, Person_47, Person_72, Person_82, Person_73, Person_84, Person_64, Person_57, Person_98, Person_42, Person_71, Person_27, Person_88, Person_41, Person_89, Person_11, Person_96, Person_56, Person_46, Person_10, Person_60, Person_92, Person_79, Person_48, Person_22, Person_74, Person_25, Person_53, Person_40, Person_36, Person_54, Person_66, Person_49, Person_14, Person_81, Person_35, Person_68, Person_94, Person_63, Person_76, Person_45, Person_69, Person_61})
+
+person(Person_10)
+manager(Person_10)
+group(Person_10, Group_0)
+smoker(Person_10)
+works-with(Person_10, {Person_60, Person_88, Person_15, Person_25, Person_52})
+
+person(Person_11)
+manager(Person_11)
+group(Person_11, Group_0)
+works-with(Person_11, {Person_50, Person_20, Person_68, Person_27, Person_51, Person_23, Person_80, Person_78, Person_28, Person_89, Person_47, Person_32, Person_45, Person_53, Person_57, Person_56, Person_73, Person_90, Person_83, Person_77, Person_33, Person_38, Person_44, Person_86, Person_22, Person_97, Person_34, Person_94, Person_31, Person_60, Person_37, Person_41, Person_74, Person_96, Person_98, Person_36, Person_61, Person_70})
+
+person(Person_12)
+group(Person_12, Group_0)
+project(Person_12, Project_0)
+works-with(Person_12, {Person_46, Person_95, Person_80, Person_90, Person_25, Person_21, Person_19, Person_99, Person_76, Person_34, Person_59, Person_27, Person_66, Person_33, Person_53, Person_18, Person_29, Person_31, Person_77, Person_54, Person_64, Person_68, Person_20, Person_42, Person_24, Person_89})
+
+person(Person_13)
+group(Person_13, Group_0)
+project(Person_13, Project_6)
+works-with(Person_13, {Person_72, Person_70, Person_92, Person_91, Person_99, Person_67, Person_98, Person_90, Person_69, Person_21, Person_64, Person_44, Person_22, Person_34})
+
+person(Person_14)
+manager(Person_14)
+group(Person_14, Group_0)
+smoker(Person_14)
+works-with(Person_14, {Person_57, Person_64, Person_71, Person_19, Person_81, Person_55, Person_80, Person_29, Person_41, Person_43, Person_50, Person_27, Person_66, Person_46, Person_69, Person_54, Person_96, Person_26, Person_45, Person_16, Person_44, Person_99, Person_47, Person_21, Person_60, Person_33, Person_98, Person_25, Person_78, Person_38, Person_17, Person_23, Person_97, Person_88, Person_56, Person_63, Person_58, Person_92, Person_77})
+
+person(Person_15)
+researcher(Person_15)
+group(Person_15, Group_0)
+project(Person_15, Project_1)
+works-with(Person_15, {Person_27, Person_90, Person_38, Person_65, Person_97, Person_45, Person_70, Person_85, Person_82, Person_88, Person_74, Person_52, Person_47, Person_42, Person_99, Person_66, Person_87, Person_91, Person_62, Person_55, Person_16, Person_23, Person_51, Person_37, Person_79, Person_46, Person_36, Person_61, Person_81, Person_64, Person_43, Person_93, Person_94, Person_71, Person_63, Person_40, Person_20, Person_92, Person_19, Person_98, Person_77, Person_24, Person_54, Person_30, Person_69, Person_26, Person_17, Person_57, Person_75, Person_96, Person_73, Person_22, Person_78, Person_44, Person_29, Person_68, Person_86, Person_21, Person_28, Person_25, Person_67, Person_41, Person_49, Person_31, Person_39, Person_35, Person_58, Person_84, Person_59})
+
+person(Person_16)
+group(Person_16, Group_0)
+project(Person_16, Project_5)
+works-with(Person_16, {Person_21, Person_82, Person_22, Person_87, Person_23, Person_26, Person_81, Person_92, Person_56, Person_67, Person_83, Person_60, Person_40, Person_17, Person_98, Person_58, Person_30, Person_51, Person_47, Person_77, Person_57, Person_41, Person_53, Person_24, Person_73, Person_48, Person_72, Person_54, Person_33, Person_37})
+
+person(Person_17)
+manager(Person_17)
+group(Person_17, Group_0)
+works-with(Person_17, {Person_97, Person_70, Person_45, Person_91, Person_66, Person_84, Person_21, Person_25, Person_69, Person_71, Person_18, Person_62, Person_20, Person_38, Person_46, Person_49, Person_65, Person_96, Person_33, Person_54, Person_52, Person_73, Person_98, Person_28, Person_77, Person_31, Person_23, Person_64, Person_90, Person_82, Person_72, Person_92, Person_88, Person_59, Person_35, Person_22, Person_85, Person_24, Person_80, Person_55, Person_60, Person_42, Person_75, Person_43, Person_95, Person_89})
+
+person(Person_18)
+secretary(Person_18)
+group(Person_18, Group_0)
+works-with(Person_18, {Person_75, Person_21, Person_78, Person_42, Person_36, Person_91, Person_66, Person_58, Person_87})
+
+person(Person_19)
+secretary(Person_19)
+group(Person_19, Group_0)
+works-with(Person_19, {Person_91, Person_35, Person_27, Person_43, Person_31, Person_28, Person_81, Person_64, Person_66, Person_33, Person_42, Person_50, Person_99, Person_38, Person_22, Person_52, Person_83})
+
+person(Person_20)
+group(Person_20, Group_0)
+project(Person_20, Project_9)
+works-with(Person_20, {Person_51, Person_37, Person_77, Person_46, Person_57, Person_49, Person_83, Person_36, Person_33, Person_71, Person_22, Person_48, Person_39, Person_54, Person_21, Person_78, Person_40, Person_59, Person_91, Person_50, Person_94, Person_89, Person_62, Person_82, Person_95, Person_97, Person_72, Person_63, Person_84, Person_26, Person_38, Person_85, Person_35, Person_23, Person_56, Person_30, Person_55, Person_92, Person_87, Person_28, Person_98, Person_58, Person_66, Person_31, Person_99, Person_42, Person_25, Person_76, Person_67, Person_29, Person_65, Person_93, Person_86, Person_24, Person_27, Person_81, Person_75, Person_53, Person_74, Person_44, Person_61, Person_60, Person_41, Person_52, Person_34, Person_88})
+
+person(Person_21)
+researcher(Person_21)
+group(Person_21, Group_0)
+project(Person_21, Project_8)
+works-with(Person_21, {Person_69, Person_58, Person_51, Person_36, Person_47, Person_98, Person_87, Person_23, Person_74, Person_63, Person_93})
+
+person(Person_22)
+secretary(Person_22)
+group(Person_22, Group_0)
+works-with(Person_22, {Person_64, Person_80, Person_96, Person_99, Person_82, Person_50, Person_34, Person_54, Person_33, Person_67, Person_97, Person_53, Person_57, Person_31, Person_66, Person_58, Person_62})
+
+person(Person_23)
+secretary(Person_23)
+group(Person_23, Group_0)
+works-with(Person_23, {Person_81, Person_45, Person_57, Person_62, Person_83, Person_73, Person_99, Person_30, Person_64, Person_80, Person_77, Person_32, Person_38, Person_34, Person_36, Person_49, Person_79, Person_43, Person_78, Person_41, Person_95, Person_27, Person_66, Person_39, Person_46, Person_92, Person_75, Person_26, Person_98, Person_63, Person_47})
+
+person(Person_24)
+group(Person_24, Group_0)
+project(Person_24, Project_1)
+heads-project(Person_24, Project_1)
+works-with(Person_24, {Person_50, Person_42, Person_52, Person_54, Person_95, Person_65, Person_39, Person_62, Person_49, Person_36, Person_72, Person_46, Person_47, Person_88, Person_69, Person_77, Person_98, Person_63, Person_75, Person_26, Person_73, Person_97, Person_57, Person_91, Person_56, Person_45, Person_58, Person_92, Person_27, Person_80, Person_82, Person_96, Person_43, Person_90, Person_85, Person_51, Person_48, Person_78, Person_38, Person_29, Person_66, Person_84, Person_37, Person_70, Person_83, Person_76, Person_61, Person_40, Person_59, Person_64})
+
+person(Person_25)
+group(Person_25, Group_0)
+project(Person_25, Project_7)
+works-with(Person_25, {Person_60, Person_82, Person_86, Person_46, Person_45, Person_47, Person_98, Person_73, Person_54, Person_57, Person_48, Person_28, Person_56})
+
+person(Person_26)
+manager(Person_26)
+group(Person_26, Group_0)
+smoker(Person_26)
+works-with(Person_26, {Person_89, Person_87, Person_91, Person_82, Person_78, Person_37, Person_60, Person_95, Person_72})
+
+person(Person_27)
+researcher(Person_27)
+group(Person_27, Group_0)
+project(Person_27, Project_3)
+works-with(Person_27, {Person_84, Person_59, Person_89, Person_95, Person_69, Person_93, Person_96, Person_47, Person_34, Person_68, Person_62, Person_54, Person_33, Person_38, Person_35, Person_98, Person_86, Person_71, Person_48, Person_32, Person_70, Person_43, Person_39, Person_78, Person_74, Person_46})
+
+person(Person_28)
+group(Person_28, Group_0)
+project(Person_28, Project_7)
+heads-project(Person_28, Project_7)
+works-with(Person_28, {Person_41, Person_62})
+
+person(Person_29)
+manager(Person_29)
+group(Person_29, Group_0)
+works-with(Person_29, {Person_34, Person_99, Person_72, Person_36, Person_57, Person_91, Person_90, Person_75, Person_68, Person_97, Person_53, Person_51, Person_44, Person_69, Person_83, Person_81, Person_98, Person_35, Person_61, Person_43, Person_62, Person_74, Person_60, Person_77, Person_56, Person_70, Person_82, Person_89, Person_93, Person_30, Person_78, Person_54, Person_42, Person_94, Person_32, Person_66, Person_92})
+
+person(Person_30)
+researcher(Person_30)
+group(Person_30, Group_0)
+smoker(Person_30)
+project(Person_30, Project_0)
+works-with(Person_30, {Person_80, Person_93, Person_43, Person_52, Person_35, Person_38, Person_54, Person_49, Person_69, Person_53, Person_87, Person_57, Person_98})
+
+person(Person_31)
+group(Person_31, Group_0)
+project(Person_31, Project_0)
+works-with(Person_31, {Person_39, Person_92, Person_64, Person_47, Person_94, Person_44, Person_70, Person_62, Person_56, Person_46, Person_53, Person_59, Person_35, Person_99, Person_34, Person_32, Person_41, Person_48, Person_45, Person_90, Person_83, Person_65, Person_69, Person_97, Person_74, Person_79, Person_42, Person_40, Person_89, Person_87, Person_61, Person_38, Person_50, Person_84, Person_33, Person_58, Person_86, Person_75, Person_76, Person_57, Person_43, Person_71, Person_95, Person_81, Person_55, Person_49, Person_67, Person_52, Person_93, Person_68, Person_54, Person_60, Person_88, Person_91, Person_96, Person_66})
+
+person(Person_32)
+manager(Person_32)
+group(Person_32, Group_0)
+works-with(Person_32, {Person_88, Person_91, Person_61, Person_93, Person_52, Person_45, Person_43, Person_79, Person_99, Person_36, Person_42, Person_75, Person_83, Person_86, Person_41, Person_84, Person_80, Person_65, Person_39, Person_62, Person_72, Person_73, Person_46, Person_95, Person_94, Person_71, Person_82, Person_64, Person_68, Person_81, Person_58, Person_90, Person_44, Person_53, Person_51, Person_87, Person_48, Person_55, Person_35, Person_74, Person_33, Person_38, Person_97, Person_37, Person_66, Person_89, Person_92, Person_56, Person_49, Person_57, Person_60, Person_54, Person_40, Person_47, Person_76, Person_50, Person_34, Person_98, Person_69, Person_85})
+
+person(Person_33)
+secretary(Person_33)
+group(Person_33, Group_0)
+works-with(Person_33, {Person_92, Person_35, Person_78, Person_60, Person_36, Person_71, Person_56, Person_34, Person_68, Person_94, Person_88, Person_38, Person_61, Person_37, Person_82, Person_62, Person_75, Person_49, Person_44, Person_42, Person_50, Person_93, Person_72, Person_76, Person_45, Person_59, Person_63, Person_53, Person_66, Person_79, Person_43, Person_74, Person_90, Person_73, Person_52, Person_69, Person_85, Person_65, Person_64, Person_83, Person_51, Person_57, Person_80, Person_99, Person_97, Person_84, Person_54, Person_46, Person_70, Person_77, Person_41, Person_86, Person_81, Person_47, Person_67, Person_89, Person_55, Person_98, Person_58, Person_96, Person_39, Person_87, Person_48, Person_91})
+
+person(Person_34)
+manager(Person_34)
+group(Person_34, Group_0)
+works-with(Person_34, {Person_68, Person_90, Person_95, Person_77, Person_38, Person_39, Person_65, Person_86, Person_82, Person_93, Person_81, Person_40, Person_63, Person_69, Person_43, Person_70, Person_76, Person_88, Person_96, Person_58, Person_67, Person_64, Person_56, Person_57, Person_60, Person_51, Person_92, Person_75, Person_89, Person_62, Person_35, Person_59, Person_98, Person_42, Person_37, Person_85, Person_66, Person_61, Person_94, Person_91, Person_80, Person_45, Person_50, Person_74, Person_44, Person_78})
+
+person(Person_35)
+group(Person_35, Group_0)
+project(Person_35, Project_3)
+heads-project(Person_35, Project_3)
+works-with(Person_35, {Person_92, Person_72, Person_59, Person_79, Person_45, Person_38})
+
+person(Person_36)
+manager(Person_36)
+group(Person_36, Group_0)
+hacker(Person_36)
+smoker(Person_36)
+works-with(Person_36, {Person_96, Person_86, Person_91, Person_42, Person_56, Person_84, Person_66, Person_65, Person_59, Person_80, Person_95, Person_81, Person_58, Person_45, Person_48, Person_37, Person_44, Person_60, Person_51, Person_94, Person_71, Person_87, Person_92, Person_93, Person_74, Person_85, Person_62, Person_89, Person_76, Person_41, Person_47, Person_82, Person_52, Person_64, Person_88, Person_99, Person_83, Person_98, Person_90, Person_50, Person_78})
+
+person(Person_37)
+researcher(Person_37)
+group(Person_37, Group_0)
+project(Person_37, Project_2)
+works-with(Person_37, {Person_98, Person_49, Person_78, Person_47, Person_76, Person_85, Person_63, Person_66, Person_43, Person_48, Person_46, Person_86, Person_99, Person_42, Person_64, Person_57, Person_77, Person_54, Person_94, Person_88, Person_71, Person_75, Person_65, Person_51, Person_84, Person_41, Person_45, Person_80, Person_68, Person_95, Person_74, Person_90, Person_70, Person_87, Person_91, Person_81, Person_67, Person_69, Person_38, Person_60, Person_55, Person_82, Person_53, Person_96, Person_83})
+
+person(Person_38)
+group(Person_38, Group_0)
+project(Person_38, Project_9)
+heads-project(Person_38, Project_9)
+works-with(Person_38, {Person_40, Person_85, Person_78, Person_58, Person_49, Person_43})
+
+person(Person_39)
+secretary(Person_39)
+group(Person_39, Group_0)
+hacker(Person_39)
+works-with(Person_39, {Person_56, Person_78, Person_86, Person_90, Person_83, Person_72, Person_67, Person_93, Person_51, Person_54, Person_70, Person_61, Person_74, Person_44, Person_42, Person_95, Person_62, Person_63, Person_82, Person_94, Person_58, Person_45, Person_43, Person_60, Person_59, Person_73, Person_66, Person_52, Person_46, Person_75, Person_71, Person_55, Person_53, Person_99, Person_81, Person_79, Person_97, Person_77, Person_50, Person_64, Person_68, Person_92, Person_80, Person_76, Person_87, Person_69, Person_88, Person_85, Person_48, Person_57, Person_40, Person_65, Person_98, Person_41})
+
+person(Person_40)
+group(Person_40, Group_0)
+project(Person_40, Project_8)
+works-with(Person_40, {Person_81, Person_55, Person_56, Person_93, Person_83, Person_69, Person_79, Person_76, Person_64, Person_84, Person_94, Person_47, Person_54, Person_91, Person_88, Person_52, Person_90, Person_89, Person_62, Person_72, Person_61, Person_60, Person_74, Person_66, Person_71, Person_82, Person_99, Person_53, Person_45, Person_77, Person_92, Person_73, Person_43, Person_95, Person_86, Person_49, Person_87, Person_48, Person_96, Person_46})
+
+person(Person_41)
+group(Person_41, Group_0)
+hacker(Person_41)
+project(Person_41, Project_2)
+heads-project(Person_41, Project_2)
+works-with(Person_41, {Person_59, Person_45, Person_71, Person_43, Person_53, Person_54, Person_70, Person_73, Person_51, Person_75, Person_78, Person_89, Person_62, Person_97, Person_65, Person_44, Person_50, Person_94, Person_42, Person_72, Person_58, Person_77, Person_48, Person_99, Person_60, Person_56, Person_91, Person_90, Person_68, Person_46, Person_86, Person_49, Person_84, Person_87, Person_96, Person_76, Person_74, Person_92, Person_63, Person_81, Person_55, Person_79, Person_66, Person_57, Person_85, Person_47, Person_61})
+
+person(Person_42)
+secretary(Person_42)
+group(Person_42, Group_0)
+works-with(Person_42, {Person_70, Person_71, Person_80, Person_68, Person_93, Person_60, Person_75, Person_45, Person_76, Person_98, Person_85, Person_62, Person_99})
+
+person(Person_43)
+researcher(Person_43)
+group(Person_43, Group_0)
+project(Person_43, Project_1)
+works-with(Person_43, {Person_70, Person_89, Person_82, Person_65, Person_75, Person_91, Person_93, Person_83, Person_64, Person_60, Person_74})
+
+person(Person_44)
+group(Person_44, Group_0)
+project(Person_44, Project_3)
+works-with(Person_44, {Person_47, Person_45, Person_99, Person_95, Person_92, Person_71, Person_81, Person_48, Person_82, Person_88, Person_98, Person_46, Person_55, Person_93, Person_64, Person_86, Person_74, Person_69, Person_87, Person_65, Person_89, Person_57, Person_80, Person_51, Person_66, Person_94, Person_68, Person_60, Person_62, Person_76, Person_49, Person_58})
+
+person(Person_45)
+researcher(Person_45)
+group(Person_45, Group_0)
+project(Person_45, Project_1)
+works-with(Person_45, {Person_77, Person_91, Person_71, Person_53, Person_70, Person_50, Person_93, Person_49, Person_78, Person_92, Person_57, Person_52, Person_64})
+
+person(Person_46)
+group(Person_46, Group_0)
+project(Person_46, Project_9)
+works-with(Person_46, {Person_93, Person_65, Person_86, Person_99, Person_61, Person_84, Person_69, Person_96, Person_76, Person_80, Person_67, Person_57, Person_81, Person_51, Person_95, Person_79, Person_47, Person_83, Person_48, Person_54, Person_56, Person_64, Person_82, Person_59, Person_87, Person_70, Person_60, Person_53, Person_94, Person_72, Person_91, Person_74, Person_66, Person_77, Person_75})
+
+person(Person_47)
+group(Person_47, Group_0)
+project(Person_47, Project_2)
+works-with(Person_47, {Person_48, Person_60, Person_97, Person_89, Person_96, Person_83, Person_81, Person_88, Person_62, Person_80, Person_91, Person_73, Person_52, Person_63, Person_64, Person_99, Person_76, Person_79, Person_57, Person_98, Person_92, Person_65, Person_87, Person_90, Person_75, Person_50, Person_93, Person_77, Person_74, Person_85, Person_70, Person_55})
+
+person(Person_48)
+secretary(Person_48)
+group(Person_48, Group_0)
+works-with(Person_48, {Person_65, Person_93, Person_55, Person_96, Person_63, Person_87, Person_70, Person_68, Person_54, Person_67, Person_97, Person_69, Person_77})
+
+person(Person_49)
+researcher(Person_49)
+group(Person_49, Group_0)
+project(Person_49, Project_5)
+works-with(Person_49, {Person_64, Person_50, Person_86, Person_51, Person_96, Person_70, Person_67, Person_56, Person_62, Person_68, Person_94, Person_54, Person_85, Person_72, Person_98, Person_71, Person_87, Person_80, Person_53, Person_69, Person_93, Person_57, Person_91, Person_89, Person_77, Person_55, Person_95, Person_78, Person_65, Person_79, Person_92, Person_61, Person_63, Person_81, Person_60, Person_88, Person_74, Person_59, Person_83, Person_66, Person_84, Person_97, Person_73, Person_75, Person_82, Person_52})
+
+person(Person_50)
+secretary(Person_50)
+group(Person_50, Group_0)
+hacker(Person_50)
+smoker(Person_50)
+works-with(Person_50, {Person_51, Person_62, Person_71, Person_76, Person_93, Person_84, Person_67, Person_91, Person_72, Person_99, Person_68, Person_86, Person_77, Person_59, Person_64, Person_89, Person_88, Person_61})
+
+person(Person_51)
+secretary(Person_51)
+group(Person_51, Group_0)
+works-with(Person_51, {Person_85, Person_98, Person_56, Person_63, Person_67, Person_81, Person_65, Person_77, Person_86, Person_53, Person_96})
+
+person(Person_52)
+secretary(Person_52)
+group(Person_52, Group_0)
+smoker(Person_52)
+works-with(Person_52, {Person_70, Person_86, Person_80, Person_69, Person_67, Person_59, Person_77, Person_83, Person_96, Person_99, Person_58, Person_90})
+
+person(Person_53)
+researcher(Person_53)
+group(Person_53, Group_0)
+heads-group(Person_53, Group_0)
+hacker(Person_53)
+project(Person_53, Project_9)
+works-with(Person_53, {Person_80, Person_81, Person_77, Person_82, Person_64, Person_55, Person_68, Person_87, Person_69, Person_91, Person_57, Person_75})
+
+person(Person_54)
+researcher(Person_54)
+group(Person_54, Group_0)
+project(Person_54, Project_5)
+works-with(Person_54, {Person_61, Person_58, Person_89, Person_57, Person_82, Person_56, Person_92, Person_88, Person_77, Person_73, Person_76, Person_65, Person_98, Person_90, Person_96, Person_71, Person_55, Person_94, Person_78, Person_85, Person_68, Person_86, Person_62, Person_95, Person_63, Person_66, Person_64, Person_59, Person_69, Person_74, Person_79, Person_81, Person_93, Person_60})
+
+person(Person_55)
+secretary(Person_55)
+group(Person_55, Group_0)
+works-with(Person_55, {Person_92, Person_63, Person_62, Person_88, Person_96, Person_57, Person_79, Person_65, Person_75, Person_70, Person_99, Person_74, Person_97, Person_64, Person_81, Person_69, Person_68, Person_67, Person_94, Person_86, Person_56, Person_83, Person_95, Person_66, Person_85, Person_77, Person_61, Person_93})
+
+person(Person_56)
+researcher(Person_56)
+group(Person_56, Group_0)
+project(Person_56, Project_0)
+heads-project(Person_56, Project_0)
+works-with(Person_56, {Person_86})
+
+person(Person_57)
+group(Person_57, Group_0)
+hacker(Person_57)
+project(Person_57, Project_1)
+works-with(Person_57, {Person_86, Person_67, Person_58, Person_88, Person_97, Person_95, Person_99, Person_61, Person_69, Person_96, Person_93, Person_64, Person_77})
+
+person(Person_58)
+manager(Person_58)
+group(Person_58, Group_0)
+hacker(Person_58)
+works-with(Person_58, {Person_75, Person_88, Person_84, Person_73, Person_82, Person_86, Person_81, Person_79, Person_94, Person_72, Person_87, Person_67, Person_65, Person_63, Person_97})
+
+person(Person_59)
+researcher(Person_59)
+group(Person_59, Group_0)
+hacker(Person_59)
+project(Person_59, Project_4)
+heads-project(Person_59, Project_4)
+works-with(Person_59, {Person_62, Person_77, Person_73, Person_87, Person_97, Person_91, Person_68, Person_61, Person_95, Person_76, Person_63, Person_71, Person_89, Person_96, Person_86, Person_67, Person_81, Person_93, Person_82, Person_85, Person_83, Person_78, Person_70, Person_88, Person_64})
+
+person(Person_60)
+researcher(Person_60)
+group(Person_60, Group_0)
+project(Person_60, Project_3)
+works-with(Person_60, {Person_71, Person_63, Person_96, Person_65, Person_70, Person_67, Person_80, Person_66, Person_73, Person_92, Person_61, Person_85, Person_95, Person_79, Person_90, Person_88})
+
+person(Person_61)
+manager(Person_61)
+group(Person_61, Group_0)
+works-with(Person_61, {Person_88, Person_75, Person_98})
+
+person(Person_62)
+secretary(Person_62)
+group(Person_62, Group_0)
+works-with(Person_62, {Person_94, Person_98, Person_84, Person_74, Person_63, Person_70, Person_96, Person_89})
+
+person(Person_63)
+group(Person_63, Group_0)
+project(Person_63, Project_0)
+works-with(Person_63, {Person_66, Person_94, Person_84, Person_70, Person_77, Person_88, Person_67, Person_74, Person_91, Person_73, Person_96, Person_80, Person_79, Person_95, Person_65, Person_89, Person_92, Person_86, Person_75, Person_83, Person_76, Person_68, Person_85, Person_78})
+
+person(Person_64)
+group(Person_64, Group_0)
+project(Person_64, Project_5)
+works-with(Person_64, {Person_98, Person_96, Person_65, Person_83, Person_86, Person_77, Person_92, Person_71, Person_87, Person_94, Person_80, Person_73, Person_91, Person_85, Person_93, Person_97, Person_78, Person_75, Person_81, Person_66})
+
+person(Person_65)
+researcher(Person_65)
+group(Person_65, Group_0)
+project(Person_65, Project_6)
+works-with(Person_65, {Person_71, Person_83, Person_81, Person_68, Person_85, Person_90, Person_95, Person_80, Person_76, Person_91, Person_66, Person_78, Person_98, Person_92, Person_88, Person_96, Person_79, Person_75, Person_77, Person_97, Person_94, Person_99, Person_89, Person_74, Person_93, Person_72, Person_87, Person_84, Person_67, Person_82})
+
+person(Person_66)
+manager(Person_66)
+group(Person_66, Group_0)
+works-with(Person_66, {Person_92, Person_95, Person_91, Person_80, Person_68, Person_73, Person_69, Person_89, Person_76, Person_82, Person_75, Person_98, Person_99, Person_94})
+
+person(Person_67)
+secretary(Person_67)
+group(Person_67, Group_0)
+works-with(Person_67, {Person_86, Person_73, Person_72, Person_94, Person_75, Person_93, Person_95, Person_83, Person_77, Person_81, Person_96, Person_78, Person_90, Person_70})
+
+person(Person_68)
+group(Person_68, Group_0)
+project(Person_68, Project_2)
+works-with(Person_68, {Person_76})
+
+person(Person_69)
+secretary(Person_69)
+group(Person_69, Group_0)
+hacker(Person_69)
+works-with(Person_69, {Person_74, Person_92, Person_93, Person_96, Person_82, Person_79, Person_95, Person_75, Person_71, Person_86})
+
+person(Person_70)
+manager(Person_70)
+group(Person_70, Group_0)
+hacker(Person_70)
+works-with(Person_70, {Person_88, Person_80, Person_77, Person_82, Person_90, Person_75, Person_71, Person_84, Person_98, Person_89, Person_91, Person_79, Person_73, Person_76})
+
+person(Person_71)
+manager(Person_71)
+group(Person_71, Group_0)
+works-with(Person_71, {Person_94, Person_81, Person_87, Person_91, Person_86, Person_75, Person_84, Person_92, Person_97, Person_76, Person_85, Person_89})
+
+person(Person_72)
+secretary(Person_72)
+group(Person_72, Group_0)
+works-with(Person_72, {Person_91, Person_87, Person_73, Person_79, Person_77, Person_78, Person_81, Person_84, Person_93, Person_94, Person_80, Person_98, Person_88, Person_76, Person_86, Person_89, Person_75, Person_90, Person_96, Person_97, Person_95, Person_82, Person_83, Person_85})
+
+person(Person_73)
+manager(Person_73)
+group(Person_73, Group_0)
+hacker(Person_73)
+works-with(Person_73, {Person_74, Person_90, Person_96, Person_92, Person_85, Person_84, Person_80, Person_99, Person_95, Person_77, Person_82, Person_94, Person_87, Person_81, Person_98, Person_89, Person_91, Person_88, Person_93, Person_97, Person_78, Person_79, Person_76})
+
+person(Person_74)
+researcher(Person_74)
+group(Person_74, Group_0)
+smoker(Person_74)
+project(Person_74, Project_5)
+heads-project(Person_74, Project_5)
+works-with(Person_74, {Person_88, Person_96, Person_99, Person_95, Person_87, Person_80, Person_82, Person_76, Person_90})
+
+person(Person_75)
+researcher(Person_75)
+group(Person_75, Group_0)
+project(Person_75, Project_9)
+works-with(Person_75, {Person_91, Person_78, Person_80, Person_96, Person_90, Person_77, Person_97, Person_76, Person_92, Person_79, Person_82, Person_83, Person_94})
+
+person(Person_76)
+manager(Person_76)
+group(Person_76, Group_0)
+hacker(Person_76)
+works-with(Person_76, {Person_89, Person_79, Person_93, Person_78, Person_94, Person_90, Person_77, Person_84, Person_88, Person_87, Person_86, Person_98, Person_85, Person_91, Person_82})
+
+person(Person_77)
+manager(Person_77)
+group(Person_77, Group_0)
+works-with(Person_77, {Person_89, Person_85, Person_98, Person_82, Person_87, Person_80, Person_81, Person_90, Person_96, Person_99, Person_83, Person_95, Person_93, Person_91, Person_78, Person_92, Person_88, Person_94})
+
+person(Person_78)
+manager(Person_78)
+group(Person_78, Group_0)
+works-with(Person_78, {Person_95, Person_87, Person_94, Person_79, Person_83, Person_86, Person_85, Person_99, Person_88, Person_90, Person_81, Person_80, Person_89, Person_92, Person_96, Person_98, Person_91, Person_93, Person_97, Person_82})
+
+person(Person_79)
+secretary(Person_79)
+group(Person_79, Group_0)
+works-with(Person_79, {Person_95, Person_85, Person_93, Person_86, Person_80, Person_82, Person_83, Person_88, Person_81, Person_91, Person_84})
+
+person(Person_80)
+researcher(Person_80)
+group(Person_80, Group_0)
+hacker(Person_80)
+project(Person_80, Project_7)
+works-with(Person_80, {Person_93, Person_82})
+
+person(Person_81)
+researcher(Person_81)
+group(Person_81, Group_0)
+hacker(Person_81)
+project(Person_81, Project_0)
+works-with(Person_81, {Person_96, Person_86, Person_95, Person_82, Person_85, Person_91, Person_84, Person_90, Person_88, Person_93})
+
+person(Person_82)
+researcher(Person_82)
+group(Person_82, Group_0)
+hacker(Person_82)
+project(Person_82, Project_4)
+works-with(Person_82, {Person_95, Person_97, Person_92, Person_94, Person_98, Person_83, Person_99, Person_85, Person_84, Person_91, Person_96})
+
+person(Person_83)
+secretary(Person_83)
+group(Person_83, Group_0)
+works-with(Person_83, {Person_94})
+
+person(Person_84)
+manager(Person_84)
+group(Person_84, Group_0)
+works-with(Person_84, {Person_88, Person_89, Person_87, Person_86})
+
+person(Person_85)
+secretary(Person_85)
+group(Person_85, Group_0)
+hacker(Person_85)
+works-with(Person_85, {Person_89, Person_94, Person_90, Person_88, Person_91, Person_93, Person_86, Person_95, Person_97, Person_98, Person_99})
+
+person(Person_86)
+manager(Person_86)
+group(Person_86, Group_0)
+works-with(Person_86, {Person_94, Person_88, Person_96, Person_99, Person_91, Person_98, Person_92, Person_89, Person_90})
+
+person(Person_87)
+group(Person_87, Group_0)
+project(Person_87, Project_9)
+works-with(Person_87, {Person_92, Person_99, Person_95, Person_94, Person_89, Person_88, Person_98, Person_97})
+
+person(Person_88)
+manager(Person_88)
+group(Person_88, Group_0)
+works-with(Person_88, {Person_99, Person_96, Person_94, Person_89, Person_93, Person_97, Person_95, Person_98, Person_90, Person_91})
+
+person(Person_89)
+manager(Person_89)
+group(Person_89, Group_0)
+works-with(Person_89, {Person_91})
+
+person(Person_90)
+group(Person_90, Group_0)
+project(Person_90, Project_8)
+heads-project(Person_90, Project_8)
+works-with(Person_90, {Person_93, Person_99, Person_94})
+
+person(Person_91)
+researcher(Person_91)
+group(Person_91, Group_0)
+smoker(Person_91)
+project(Person_91, Project_4)
+works-with(Person_91, {Person_97, Person_96, Person_93, Person_98})
+
+person(Person_92)
+researcher(Person_92)
+group(Person_92, Group_0)
+project(Person_92, Project_8)
+works-with(Person_92, {Person_99, Person_94, Person_98, Person_97, Person_96, Person_93})
+
+person(Person_93)
+group(Person_93, Group_0)
+project(Person_93, Project_4)
+works-with(Person_93, {Person_99, Person_96})
+
+person(Person_94)
+group(Person_94, Group_0)
+project(Person_94, Project_6)
+works-with(Person_94, {Person_96, Person_97, Person_95, Person_98})
+
+person(Person_95)
+group(Person_95, Group_0)
+project(Person_95, Project_3)
+works-with(Person_95, {Person_99, Person_96, Person_98, Person_97})
+
+person(Person_96)
+manager(Person_96)
+group(Person_96, Group_0)
+works-with(Person_96, {Person_97})
+
+person(Person_97)
+group(Person_97, Group_0)
+project(Person_97, Project_6)
+heads-project(Person_97, Project_6)
+
+person(Person_98)
+secretary(Person_98)
+group(Person_98, Group_0)
+works-with(Person_98, {Person_99})
+
+person(Person_99)
+group(Person_99, Group_0)
+project(Person_99, Project_1)
+
+large-project(Project_0)
+large-project(Project_1)
+project(Project_2)
+project(Project_3)
+large-project(Project_4)
+large-project(Project_5)
+project(Project_6)
+project(Project_7)
+project(Project_8)
+project(Project_9)
+
+room(Room_0)
+large-room(Room_0)
+close(Room_0, {Room_76, Room_14, Room_12, Room_46, Room_23, Room_50, Room_49, Room_27, Room_17, Room_34, Room_5, Room_36, Room_60, Room_62, Room_45, Room_57, Room_55, Room_9, Room_24, Room_13, Room_39, Room_33, Room_66, Room_43, Room_69, Room_73, Room_41, Room_37, Room_28, Room_65, Room_16, Room_15, Room_7, Room_2, Room_26, Room_32, Room_1, Room_35, Room_22, Room_79, Room_21, Room_71, Room_18, Room_4, Room_77, Room_10, Room_38, Room_3, Room_58, Room_72, Room_48, Room_30, Room_78, Room_11, Room_68, Room_6, Room_52, Room_8, Room_40, Room_59, Room_56, Room_51, Room_70, Room_54, Room_74})
+
+room(Room_1)
+small-room(Room_1)
+close(Room_1, {Room_65})
+
+room(Room_2)
+large-room(Room_2)
+close(Room_2, {Room_7, Room_47, Room_21, Room_24})
+
+room(Room_3)
+medium-room(Room_3)
+close(Room_3, {Room_66, Room_57, Room_39, Room_61, Room_62, Room_51, Room_69, Room_25, Room_32, Room_70, Room_30, Room_46, Room_73, Room_38, Room_43, Room_78, Room_76, Room_49, Room_11, Room_65, Room_16, Room_36, Room_21, Room_52, Room_37, Room_50, Room_54, Room_31})
+
+room(Room_4)
+medium-room(Room_4)
+close(Room_4, {Room_16, Room_79, Room_66, Room_34, Room_31, Room_60, Room_10, Room_21, Room_7, Room_77, Room_52, Room_5, Room_63, Room_19, Room_13, Room_74, Room_46, Room_53, Room_20, Room_59, Room_22, Room_6, Room_65, Room_58, Room_43, Room_54})
+
+room(Room_5)
+small-room(Room_5)
+close(Room_5, {Room_73, Room_56, Room_25, Room_44, Room_52, Room_79, Room_65})
+
+room(Room_6)
+small-room(Room_6)
+close(Room_6, {Room_61, Room_33, Room_60, Room_11, Room_64, Room_57, Room_37, Room_53, Room_45, Room_79, Room_38, Room_39, Room_70, Room_18, Room_50, Room_30, Room_19, Room_31, Room_22, Room_66, Room_69, Room_40, Room_48, Room_75, Room_44, Room_55, Room_56, Room_23, Room_42, Room_71, Room_8, Room_62, Room_77, Room_78, Room_74, Room_58, Room_15, Room_73, Room_27, Room_54, Room_65, Room_47, Room_29, Room_10, Room_41, Room_43, Room_20, Room_9, Room_32, Room_72, Room_49, Room_63, Room_16, Room_26, Room_68, Room_36, Room_52, Room_14, Room_17, Room_35, Room_21, Room_13})
+
+room(Room_7)
+small-room(Room_7)
+close(Room_7, {Room_55, Room_14, Room_24, Room_77, Room_60, Room_17, Room_9, Room_58, Room_73, Room_62, Room_50, Room_31, Room_34, Room_32, Room_47, Room_36, Room_75, Room_45, Room_48, Room_78, Room_79, Room_38, Room_69, Room_11, Room_56, Room_27, Room_63, Room_40})
+
+room(Room_8)
+small-room(Room_8)
+close(Room_8, {Room_47, Room_15, Room_28, Room_61, Room_74, Room_55, Room_64, Room_14, Room_25, Room_19, Room_60, Room_58, Room_73, Room_31, Room_23, Room_20, Room_38, Room_76, Room_10, Room_43, Room_72, Room_77, Room_34, Room_27, Room_70, Room_22, Room_13, Room_62, Room_35, Room_54, Room_78, Room_63, Room_59, Room_37, Room_48, Room_57, Room_32, Room_16, Room_29, Room_56, Room_36, Room_49, Room_79, Room_51, Room_67, Room_17, Room_11, Room_9, Room_42, Room_41, Room_52, Room_44, Room_68, Room_69})
+
+room(Room_9)
+medium-room(Room_9)
+close(Room_9, {Room_20, Room_32, Room_23, Room_79, Room_18, Room_52, Room_24, Room_65, Room_12, Room_67, Room_22, Room_59, Room_46, Room_36, Room_60, Room_43, Room_63, Room_26, Room_39, Room_54, Room_50, Room_49, Room_40, Room_45, Room_57, Room_37, Room_58, Room_38, Room_68, Room_61, Room_31, Room_78, Room_30, Room_34, Room_47, Room_77, Room_55, Room_28, Room_76, Room_14, Room_75, Room_51, Room_53, Room_27, Room_33, Room_35, Room_71, Room_41, Room_19, Room_69, Room_48, Room_16, Room_70, Room_66, Room_44, Room_64, Room_42, Room_10, Room_73, Room_56, Room_62, Room_29})
+
+room(Room_10)
+large-room(Room_10)
+close(Room_10, {Room_14, Room_45, Room_22, Room_67, Room_72, Room_76, Room_78, Room_13, Room_77, Room_30, Room_25, Room_65, Room_38, Room_32, Room_64, Room_79, Room_53, Room_15, Room_28, Room_63, Room_59, Room_54, Room_69, Room_61, Room_42, Room_52, Room_58, Room_43, Room_75, Room_70, Room_39, Room_16, Room_74, Room_40, Room_71, Room_21, Room_31, Room_24, Room_48, Room_37, Room_34, Room_18, Room_44, Room_68, Room_23, Room_36, Room_11, Room_47, Room_20, Room_17, Room_19, Room_66, Room_41, Room_57, Room_60, Room_33, Room_56, Room_46, Room_73, Room_12, Room_35})
+
+room(Room_11)
+large-room(Room_11)
+close(Room_11, {Room_26, Room_79, Room_30, Room_49, Room_47, Room_42, Room_34, Room_65, Room_66, Room_32, Room_22, Room_74, Room_17, Room_53, Room_37, Room_15, Room_44, Room_38, Room_57})
+
+room(Room_12)
+small-room(Room_12)
+close(Room_12, {Room_31, Room_60, Room_71, Room_45, Room_61, Room_41, Room_76, Room_25, Room_49, Room_17, Room_75, Room_74, Room_22, Room_59, Room_79, Room_70, Room_13, Room_78, Room_64, Room_24, Room_69, Room_20, Room_72, Room_38, Room_57, Room_15, Room_62, Room_48, Room_43, Room_65, Room_53, Room_58, Room_73, Room_67, Room_35, Room_56, Room_21, Room_52, Room_44, Room_27, Room_77, Room_16, Room_42, Room_68, Room_63, Room_28, Room_32, Room_23, Room_66, Room_55, Room_36, Room_40, Room_30, Room_14, Room_19, Room_18, Room_47, Room_34, Room_26, Room_46, Room_33, Room_37, Room_50})
+
+room(Room_13)
+small-room(Room_13)
+close(Room_13, {Room_26, Room_48, Room_17, Room_77, Room_31, Room_75, Room_60, Room_65, Room_41, Room_58, Room_69, Room_19, Room_35, Room_25, Room_72, Room_50, Room_55, Room_67, Room_16, Room_46, Room_56, Room_18, Room_22, Room_59})
+
+room(Room_14)
+medium-room(Room_14)
+close(Room_14, {Room_76, Room_39, Room_17, Room_56, Room_55, Room_64, Room_48, Room_29, Room_27, Room_44, Room_16, Room_32, Room_58, Room_71, Room_75, Room_65, Room_24, Room_19, Room_79, Room_60, Room_62, Room_43, Room_28, Room_67, Room_41, Room_23, Room_61, Room_15, Room_18, Room_46, Room_63, Room_30, Room_45, Room_22, Room_25, Room_34, Room_49, Room_74, Room_72, Room_70, Room_77, Room_33, Room_38, Room_59, Room_37, Room_31, Room_54, Room_36, Room_66, Room_35, Room_53, Room_50, Room_26, Room_47, Room_21, Room_20, Room_78, Room_42, Room_40, Room_68, Room_57})
+
+room(Room_15)
+medium-room(Room_15)
+close(Room_15, {Room_70, Room_31, Room_30, Room_29, Room_39, Room_77, Room_33, Room_76, Room_46, Room_50, Room_47, Room_26, Room_40, Room_20, Room_78, Room_25, Room_52, Room_68})
+
+room(Room_16)
+small-room(Room_16)
+close(Room_16, {Room_43, Room_21, Room_28, Room_63, Room_23, Room_30, Room_40, Room_31, Room_49, Room_54, Room_20, Room_53, Room_59, Room_71, Room_36, Room_45, Room_72, Room_27, Room_22, Room_67, Room_33, Room_62, Room_24, Room_79, Room_25, Room_48, Room_44, Room_76, Room_26, Room_73, Room_47, Room_57, Room_18, Room_46, Room_51, Room_29, Room_68, Room_64, Room_39, Room_42, Room_19, Room_74, Room_69, Room_58, Room_52, Room_66, Room_70, Room_77, Room_56, Room_17, Room_37, Room_55, Room_38, Room_60})
+
+room(Room_17)
+medium-room(Room_17)
+close(Room_17, {Room_20, Room_49, Room_25, Room_79, Room_48, Room_32, Room_60, Room_21, Room_18, Room_22, Room_39, Room_19, Room_45, Room_42, Room_44, Room_68, Room_59, Room_36, Room_75, Room_62, Room_52, Room_27, Room_37, Room_58, Room_46, Room_33, Room_51, Room_70, Room_29})
+
+room(Room_18)
+large-room(Room_18)
+close(Room_18, {Room_78, Room_51})
+
+room(Room_19)
+medium-room(Room_19)
+close(Room_19, {Room_64, Room_49, Room_31, Room_58, Room_50, Room_72, Room_71, Room_30, Room_59, Room_24, Room_53, Room_22, Room_51, Room_34, Room_41, Room_45, Room_60})
+
+room(Room_20)
+medium-room(Room_20)
+close(Room_20, {Room_34, Room_74, Room_62, Room_66, Room_44, Room_56, Room_67, Room_35, Room_54, Room_29, Room_61, Room_21, Room_60, Room_52, Room_41, Room_68, Room_23, Room_32, Room_40, Room_39, Room_57, Room_25, Room_33, Room_36, Room_70, Room_28, Room_45, Room_42, Room_59, Room_51, Room_48, Room_79, Room_72, Room_26, Room_53, Room_71, Room_64, Room_78, Room_76, Room_38, Room_73, Room_55, Room_49})
+
+room(Room_21)
+large-room(Room_21)
+close(Room_21, {Room_64, Room_78, Room_60, Room_24, Room_67, Room_72, Room_73})
+
+room(Room_22)
+small-room(Room_22)
+close(Room_22, {Room_53, Room_71, Room_26, Room_30, Room_48, Room_23, Room_44, Room_76, Room_35, Room_72, Room_46, Room_45, Room_36, Room_52, Room_42})
+
+room(Room_23)
+medium-room(Room_23)
+close(Room_23, {Room_72, Room_48, Room_39, Room_59, Room_51, Room_66, Room_46, Room_40, Room_60, Room_42, Room_53, Room_30, Room_74, Room_37, Room_54, Room_58, Room_73, Room_41, Room_55, Room_34, Room_28, Room_75, Room_50, Room_63, Room_67, Room_78, Room_76, Room_36, Room_57, Room_70, Room_33, Room_29, Room_79, Room_26, Room_64, Room_27, Room_56, Room_44, Room_61, Room_25, Room_62, Room_47, Room_49, Room_31, Room_35})
+
+room(Room_24)
+small-room(Room_24)
+close(Room_24, {Room_38, Room_30})
+
+room(Room_25)
+large-room(Room_25)
+close(Room_25, {Room_43, Room_36, Room_75, Room_45, Room_76, Room_48})
+
+room(Room_26)
+small-room(Room_26)
+close(Room_26, {Room_44, Room_66, Room_46, Room_52, Room_37, Room_78, Room_28, Room_51, Room_58, Room_32, Room_57, Room_59, Room_64, Room_47, Room_49, Room_33, Room_50, Room_76})
+
+room(Room_27)
+medium-room(Room_27)
+close(Room_27, {Room_33, Room_29, Room_38, Room_40, Room_51, Room_44, Room_49, Room_39, Room_66, Room_58, Room_76, Room_77, Room_46, Room_50, Room_57})
+
+room(Room_28)
+medium-room(Room_28)
+close(Room_28, {Room_59, Room_76, Room_51, Room_57, Room_70, Room_49, Room_39, Room_48, Room_42, Room_65, Room_62, Room_32, Room_33, Room_67, Room_68, Room_64, Room_38, Room_45, Room_78, Room_37})
+
+room(Room_29)
+large-room(Room_29)
+close(Room_29, {Room_33, Room_70})
+
+room(Room_30)
+large-room(Room_30)
+close(Room_30, {Room_47, Room_73, Room_78, Room_45, Room_64, Room_35, Room_74, Room_36, Room_67, Room_62, Room_79, Room_69, Room_66, Room_42, Room_34, Room_39, Room_55, Room_41, Room_44, Room_49, Room_58, Room_61, Room_65, Room_71, Room_51})
+
+room(Room_31)
+small-room(Room_31)
+close(Room_31, {Room_74, Room_69, Room_34, Room_77, Room_72, Room_70, Room_48, Room_66, Room_35, Room_64, Room_50, Room_38, Room_52, Room_79, Room_55, Room_45, Room_73, Room_47, Room_61, Room_53, Room_57, Room_75, Room_56, Room_40, Room_42})
+
+room(Room_32)
+small-room(Room_32)
+close(Room_32, {Room_63, Room_65, Room_61, Room_37, Room_70, Room_55, Room_48, Room_40, Room_53, Room_62, Room_34, Room_47, Room_76, Room_33, Room_52, Room_56, Room_35, Room_58, Room_39, Room_60, Room_50, Room_43, Room_59, Room_54, Room_36, Room_77, Room_64, Room_66, Room_46, Room_51, Room_75, Room_69, Room_49})
+
+room(Room_33)
+small-room(Room_33)
+close(Room_33, {Room_42, Room_56, Room_67, Room_70, Room_77, Room_63, Room_49, Room_65, Room_48, Room_55, Room_69, Room_74, Room_41, Room_78, Room_35, Room_64, Room_39, Room_72, Room_38, Room_66, Room_53, Room_34, Room_54, Room_61, Room_43, Room_57, Room_60, Room_46, Room_68, Room_44, Room_51, Room_36})
+
+room(Room_34)
+large-room(Room_34)
+close(Room_34, {Room_67, Room_51, Room_70, Room_79, Room_68, Room_53, Room_40, Room_57, Room_72, Room_42, Room_47, Room_76, Room_43, Room_62})
+
+room(Room_35)
+large-room(Room_35)
+close(Room_35, {Room_62, Room_43, Room_57, Room_68, Room_55, Room_38, Room_59, Room_76, Room_49, Room_44, Room_66, Room_36, Room_39})
+
+room(Room_36)
+medium-room(Room_36)
+close(Room_36, {Room_72, Room_45, Room_53, Room_57, Room_63, Room_78, Room_73, Room_43, Room_54, Room_64, Room_66, Room_52, Room_50, Room_46, Room_49, Room_37, Room_48, Room_71, Room_42, Room_40, Room_44, Room_41, Room_56, Room_68, Room_67, Room_60, Room_75, Room_39, Room_38, Room_61, Room_51, Room_69, Room_65, Room_70, Room_76, Room_47})
+
+room(Room_37)
+large-room(Room_37)
+close(Room_37, {Room_61, Room_49, Room_51, Room_54, Room_46, Room_64, Room_41, Room_47, Room_75, Room_40, Room_42, Room_66, Room_78, Room_68, Room_74, Room_62, Room_48, Room_76, Room_58, Room_38, Room_57, Room_53, Room_79, Room_43, Room_73, Room_60, Room_63, Room_59, Room_50, Room_44, Room_72, Room_67, Room_45, Room_39, Room_69, Room_70, Room_56, Room_71, Room_77})
+
+room(Room_38)
+large-room(Room_38)
+close(Room_38, {Room_56, Room_63, Room_48, Room_79, Room_76, Room_78, Room_58, Room_70, Room_59, Room_71, Room_43, Room_66, Room_53, Room_65, Room_62, Room_46, Room_49, Room_61, Room_60, Room_69, Room_68, Room_72, Room_42, Room_41, Room_73, Room_39, Room_52, Room_64})
+
+room(Room_39)
+small-room(Room_39)
+close(Room_39, {Room_64, Room_67, Room_41, Room_44, Room_74, Room_43, Room_75, Room_46, Room_70, Room_58, Room_78, Room_55, Room_73, Room_54, Room_45, Room_42, Room_57, Room_40, Room_66, Room_56, Room_72, Room_47, Room_50, Room_79, Room_52, Room_65})
+
+room(Room_40)
+medium-room(Room_40)
+close(Room_40, {Room_69, Room_65, Room_77, Room_75, Room_64, Room_51, Room_76, Room_59, Room_46, Room_66, Room_73, Room_42, Room_72, Room_43, Room_45, Room_41, Room_67, Room_71, Room_50, Room_53, Room_49, Room_55, Room_60, Room_52, Room_63, Room_61, Room_68, Room_58, Room_62, Room_78, Room_47, Room_79})
+
+room(Room_41)
+large-room(Room_41)
+close(Room_41, {Room_48, Room_53, Room_69, Room_51, Room_57, Room_58, Room_63, Room_47, Room_68, Room_78, Room_74, Room_42, Room_71, Room_62, Room_75, Room_50, Room_54, Room_45, Room_77, Room_73, Room_55, Room_79})
+
+room(Room_42)
+small-room(Room_42)
+close(Room_42, {Room_73, Room_71, Room_57, Room_79, Room_58, Room_53, Room_51, Room_72})
+
+room(Room_43)
+large-room(Room_43)
+close(Room_43, {Room_55, Room_77})
+
+room(Room_44)
+large-room(Room_44)
+close(Room_44, {Room_68, Room_76, Room_69, Room_73, Room_61, Room_46, Room_45, Room_59, Room_56, Room_63, Room_49, Room_58, Room_48, Room_51, Room_64, Room_55, Room_52, Room_62, Room_54, Room_79, Room_53, Room_71, Room_75, Room_77, Room_72, Room_50, Room_66, Room_70})
+
+room(Room_45)
+large-room(Room_45)
+close(Room_45, {Room_58, Room_50, Room_55})
+
+room(Room_46)
+medium-room(Room_46)
+close(Room_46, {Room_75, Room_64, Room_66, Room_78, Room_54, Room_69, Room_63, Room_57, Room_47, Room_55, Room_67, Room_59, Room_74, Room_50, Room_68, Room_53, Room_77, Room_49, Room_72, Room_51, Room_61, Room_52, Room_56, Room_65})
+
+room(Room_47)
+small-room(Room_47)
+close(Room_47, {Room_69, Room_57, Room_62, Room_76})
+
+room(Room_48)
+medium-room(Room_48)
+close(Room_48, {Room_49, Room_64, Room_58, Room_53, Room_77, Room_55, Room_74, Room_61, Room_62, Room_73, Room_67, Room_54, Room_59, Room_68, Room_51, Room_50, Room_78, Room_63, Room_66, Room_69, Room_65, Room_75})
+
+room(Room_49)
+small-room(Room_49)
+close(Room_49, {Room_53, Room_61, Room_56, Room_68, Room_77, Room_69, Room_75, Room_57, Room_55, Room_74, Room_66, Room_67})
+
+room(Room_50)
+large-room(Room_50)
+close(Room_50, {Room_57, Room_58, Room_74, Room_69, Room_76, Room_61, Room_72, Room_54})
+
+room(Room_51)
+small-room(Room_51)
+close(Room_51, {Room_79, Room_57, Room_73, Room_56, Room_55, Room_72, Room_69, Room_78, Room_63, Room_59, Room_53, Room_58, Room_54, Room_70, Room_75, Room_65, Room_77, Room_76, Room_74, Room_66, Room_60, Room_62, Room_67, Room_71})
+
+room(Room_52)
+large-room(Room_52)
+close(Room_52, {Room_61, Room_65, Room_69, Room_68, Room_62, Room_79})
+
+room(Room_53)
+small-room(Room_53)
+close(Room_53, {Room_74, Room_66, Room_71, Room_69, Room_61, Room_60, Room_64})
+
+room(Room_54)
+medium-room(Room_54)
+close(Room_54, {Room_55, Room_79, Room_67, Room_78, Room_71, Room_62, Room_75, Room_68, Room_64, Room_74, Room_59, Room_73, Room_66, Room_77, Room_56, Room_58, Room_57})
+
+room(Room_55)
+medium-room(Room_55)
+close(Room_55, {Room_65, Room_64, Room_56, Room_73, Room_57, Room_71, Room_59, Room_74, Room_78, Room_69, Room_72, Room_76, Room_66, Room_60, Room_63, Room_67, Room_58, Room_79})
+
+room(Room_56)
+medium-room(Room_56)
+close(Room_56, {Room_72, Room_65, Room_66, Room_71, Room_58, Room_59, Room_74, Room_62, Room_61, Room_79, Room_57, Room_77, Room_76, Room_63, Room_78, Room_73})
+
+room(Room_57)
+large-room(Room_57)
+close(Room_57, {Room_70, Room_74, Room_59, Room_78, Room_72, Room_68, Room_66, Room_58, Room_64, Room_79, Room_71, Room_76})
+
+room(Room_58)
+large-room(Room_58)
+close(Room_58, {Room_61, Room_69, Room_60, Room_62, Room_78, Room_68, Room_73, Room_74, Room_76, Room_70, Room_65})
+
+room(Room_59)
+medium-room(Room_59)
+close(Room_59, {Room_72, Room_73, Room_67, Room_74, Room_68, Room_75, Room_61, Room_63, Room_79, Room_69, Room_66, Room_78})
+
+room(Room_60)
+large-room(Room_60)
+close(Room_60, {Room_66, Room_76, Room_78, Room_77, Room_71, Room_69, Room_62, Room_79, Room_73, Room_65, Room_67, Room_68, Room_72, Room_74})
+
+room(Room_61)
+large-room(Room_61)
+close(Room_61, {Room_63, Room_64, Room_75, Room_71, Room_78, Room_65, Room_77, Room_67, Room_68, Room_70, Room_73, Room_66})
+
+room(Room_62)
+small-room(Room_62)
+close(Room_62, {Room_72, Room_68, Room_73})
+
+room(Room_63)
+small-room(Room_63)
+
+room(Room_64)
+small-room(Room_64)
+close(Room_64, {Room_66, Room_65, Room_74, Room_72, Room_67, Room_75, Room_77, Room_69, Room_68, Room_78, Room_73, Room_70, Room_76})
+
+room(Room_65)
+large-room(Room_65)
+close(Room_65, {Room_70, Room_69, Room_77})
+
+room(Room_66)
+large-room(Room_66)
+close(Room_66, {Room_72, Room_76, Room_67})
+
+room(Room_67)
+medium-room(Room_67)
+close(Room_67, {Room_69, Room_73, Room_70, Room_75, Room_74, Room_76, Room_78})
+
+room(Room_68)
+medium-room(Room_68)
+close(Room_68, {Room_74, Room_79})
+
+room(Room_69)
+medium-room(Room_69)
+close(Room_69, {Room_72, Room_75, Room_79, Room_70, Room_74, Room_73, Room_77, Room_78})
+
+room(Room_70)
+medium-room(Room_70)
+close(Room_70, {Room_76, Room_78, Room_77})
+
+room(Room_71)
+medium-room(Room_71)
+close(Room_71, {Room_79, Room_75, Room_78})
+
+room(Room_72)
+small-room(Room_72)
+close(Room_72, {Room_75, Room_79, Room_73, Room_76, Room_78, Room_77})
+
+room(Room_73)
+large-room(Room_73)
+close(Room_73, {Room_78, Room_77, Room_79, Room_74, Room_75})
+
+room(Room_74)
+large-room(Room_74)
+close(Room_74, {Room_77, Room_78, Room_75, Room_79, Room_76})
+
+room(Room_75)
+large-room(Room_75)
+close(Room_75, {Room_77})
+
+room(Room_76)
+large-room(Room_76)
+close(Room_76, {Room_78})
+
+room(Room_77)
+medium-room(Room_77)
+close(Room_77, {Room_79})
+
+room(Room_78)
+large-room(Room_78)
+
+room(Room_79)
+small-room(Room_79)
+

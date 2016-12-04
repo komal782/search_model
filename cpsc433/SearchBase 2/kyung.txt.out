@@ -1,0 +1,27 @@
+person(BITCHASS)
+secretary(BITCHASS)
+works-with(BITCHASS, BITCH)
+
+person(komal)
+secretary(komal)
+
+person(BITCH)
+secretary(BITCH)
+works-with(BITCH, BITCHASS)
+
+person(rae)
+secretary(rae)
+
+person(plebian)
+
+
+
+small-room(plebroom)
+medium-room(fuckthis)
+large-room(thepartyroom)
+
+
+
+assign-to(komal, fuckthis)
+assign-to(rae, fuckthis)
+assign-to(rae, fuckthis)
