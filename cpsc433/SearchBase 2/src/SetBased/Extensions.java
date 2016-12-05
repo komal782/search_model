@@ -276,61 +276,127 @@ public class Extensions {
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         ArrayList<Room> spareRooms = fact.getSpareRooms();
+        int numberToFix = (int) Math.floor(Math.random() * (assignments.size()/2));
+        int numberFixed = 0;
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT4) {
+            if (!temp.getRoom().founderRoom && (numberFixed <= numberToFix)){
                 Person[] person = temp.getPerson();
                 if (person.length == 2){
-                    if (person[0].getProjects() != person[1].getProjects()){
-                        //get another assignment
-                        for (Person p : temp.getPerson()){
-                            //get check if that person has the same project as the other person
-                            if(person[0].getProjects() == p.getProjects()){
-                                //put person p into the room
-                                //remove that person[1] from the room
+                    if (!environment.e_works_with(person[0].getName(), person[1].getName())){
+                        int x = (int) Math.floor(Math.random() * 10);
+                        Person personToFix = temp.getPerson()[(x < 5) ? 0 : 1];
+                        boolean fixed = false;
+                        for (String coworker : personToFix.getCoworkers()){
+                            Assignment assignment = fact.getAssignment(environment.getPerson(coworker));
+                            Person[] people = assignment.getPerson();
+                            Room room = assignment.getRoom();
+                            if (!room.founderRoom){
+                                Person theCow = (people[0].getName().equals(coworker)) ? people[0]: people[1];
+                                if (!(theCow.isManager || theCow.projectHead || theCow.isGroupHead)) {
+                                    if (people.length == 2) {
+                                        swapPeople(temp, assignment, (x < 5) ? 1 : 0, (people[0].getName().equals(coworker)) ? 0: 1);
+                                    } else {
+                                        assignment.addSecondPerson(personToFix);
+                                        temp.removePerson(personToFix);
+                                    }
+                                    fixed = true;
+                                }
                             }
-                            else if(person[1].getProjects() == p.getProjects()) {
-                                //put person p into the room
-                                //remove person[1] form the room
+                            if (fixed)
+                                break;
+                        }
+                        if (!fixed){
+                            personToFix = temp.getPerson()[(x < 5) ? 1 : 0];
+                            for (String coworker : personToFix.getCoworkers()){
+                                Assignment assignment = fact.getAssignment(environment.getPerson(coworker));
+                                Person[] people = assignment.getPerson();
+                                Room room = assignment.getRoom();
+                                if (!room.founderRoom){
+                                    Person theCow = (people[0].getName().equals(coworker)) ? people[0]: people[1];
+                                    if (!(theCow.isManager || theCow.projectHead || theCow.isGroupHead)) {
+                                        if (people.length == 2) {
+                                            swapPeople(temp, assignment, (x < 5) ? 1 : 0, (people[0].getName().equals(coworker)) ? 0: 1);
+                                        } else {
+                                            assignment.addSecondPerson(personToFix);
+                                            temp.removePerson(personToFix);
+                                        }
+                                        fixed = true;
+                                    }
+                                }
+                                if (fixed)
+                                    break;
                             }
                         }
                     }
                 }
-
             }
+            assignments.add(temp);
         }
-        return null;
+        return new Fact(assignments, spareRooms);
     }
 
     static public Fact Rule16(Fact fact) {
-        Boolean solved = false;
         Environment environment = Environment.get();
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         ArrayList<Room> spareRooms = fact.getSpareRooms();
+        int numberToFix = (int) Math.floor(Math.random() * (assignments.size()/2));
+        int numberFixed = 0;
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT4) {
-                if (temp.getRoom().getSize() == 2 && environment.e_small_room(temp.getRoom().getName()) == true){
+            if (!temp.getRoom().founderRoom && (numberFixed <= numberToFix)){
+                if (temp.getRoom().getSize() == 1 && temp.getPerson().length == 2){
                     if(!spareRooms.isEmpty()){
                         for (Room room : spareRooms){
-                            if (room.size()){
-
+                            if (room.getSize() > 1){
+                                int x = (int) Math.floor(Math.random() * 10);
+                                Person personToMove = temp.getPerson()[(x < 5) ? 0 : 1];
+                                //System.out.println(x);
+                                Assignment newAssignment = new Assignment(room, personToMove);
+                                temp.removePerson(personToMove);
+                                assignments.add(newAssignment);
+                                spareRooms.remove(room);
+                                numberFixed++;
+                                break;
                             }
                         }
-                        //get a large or medium room then add people
-                        //remove the people
-                        // and ad these people to the spare room
                     }
-                    else if (spareRooms.isEmpty()){
-                        //get one person move them into a small spare room
-                        //if not a small room then the next medium room
+                    else {
+                        for (String largeRoom : environment.getLargeRooms()){
+                            Room room = environment.getRoom(largeRoom);
+                            if (!room.founderRoom){
+                                Assignment assignment = fact.getAssignment(room);
+                                Person[] people = assignment.getPerson();
+                                if (people.length == 1 && !(people[0].isGroupHead || people[0].isManager || people[0].projectHead)){
+                                    int x = (int) Math.floor(Math.random() * 10);
+                                    Person personToMove = temp.getPerson()[(x < 5) ? 0 : 1];
+                                    temp.removePerson(personToMove);
+                                    assignment.addSecondPerson(personToMove);
+                                    numberFixed++;
+                                }
+                            }
+                        }
+                        for (String mediumRoom : environment.getMediumRooms()){
+                            Room room = environment.getRoom(mediumRoom);
+                            if (!room.founderRoom){
+                                Assignment assignment = fact.getAssignment(room);
+                                Person[] people = assignment.getPerson();
+                                if (people.length == 1 && !(people[0].isGroupHead || people[0].isManager || people[0].projectHead)){
+                                    int x = (int) Math.floor(Math.random() * 10);
+                                    Person personToMove = temp.getPerson()[(x < 5) ? 0 : 1];
+                                    temp.removePerson(personToMove);
+                                    assignment.addSecondPerson(personToMove);
+                                    numberFixed++;
+                                }
+                            }
+                        }
                     }
                 }
-
             }
+            assignments.add(temp);
         }
-        return null;
+        return new Fact(assignments, spareRooms);
     }
 
 
@@ -352,67 +418,6 @@ public class Extensions {
         toSwap = people[person];
         a1.setPerson(people[person], people1[person2]);
         a2.setPerson(people1[person2], toSwap);
-    }
-    /*private static void swapPeople(Assignment a1, Assignment a2){
-        Person person1 = a1.getPerson()[0];
-        Person person2 = a1.getPerson()[1];
-        Person person3 = a2.getPerson()[0];
-        Person person4 = a2.getPerson()[1];
-        Person toSwap;
-        if (person1.isSecretary){
-            toSwap = person1;
-            if (person3.isSecretary){
-                a1.setPerson1(person3);
-                a2.setPerson1(toSwap);
-            }
-            else {
-                a1.setPerson1(person4);
-                a2.setPerson2(toSwap);
-            }
-        }
-        else {
-            toSwap = person2;
-            if (person3.isSecretary){
-                a1.setPerson2(person3);
-                a2.setPerson1(toSwap);
-            }
-            else {
-                a1.setPerson2(person4);
-                a2.setPerson2(toSwap);
-            }
-        }
-
-    }*/
-
-    private static void swapPeople2(Assignment a1, Assignment a2){
-        Person person1 = a1.getPerson()[0];
-        Person person2 = a1.getPerson()[1];
-        Person person3 = a2.getPerson()[0];
-        Person person4 = a2.getPerson()[1];
-        Person toSwap;
-        if (person1.isSmoker){
-            toSwap = person1;
-            if (person3.isSmoker){
-                a1.setPerson1(person3);
-                a2.setPerson1(toSwap);
-            }
-            else {
-                a1.setPerson1(person4);
-                a2.setPerson2(toSwap);
-            }
-        }
-        else {
-            toSwap = person2;
-            if (person3.isSmoker){
-                a1.setPerson2(person3);
-                a2.setPerson1(toSwap);
-            }
-            else {
-                a1.setPerson2(person4);
-                a2.setPerson2(toSwap);
-            }
-        }
-
     }
 
 }

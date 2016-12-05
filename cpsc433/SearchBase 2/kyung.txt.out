@@ -1,37 +1,7 @@
-person(plebian2)
-
-person(BITCHASS)
-secretary(BITCHASS)
-works-with(BITCHASS, BITCH)
-
-person(komal)
-secretary(komal)
-
-person(pleb3)
-secretary(pleb3)
-
-person(BITCH)
-secretary(BITCH)
-works-with(BITCH, BITCHASS)
-
-person(rae)
-secretary(rae)
-
-person(plebian)
-
-
-
-small-room(t)
-small-room(plebroom)
-medium-room(fuckthis)
-large-room(thepartyroom)
-
-
-
 assign-to(komal, fuckthis)
 assign-to(rae, fuckthis)
-assign-to(plebian2, t)
+assign-to(BITCH, t)
 assign-to(BITCHASS, t)
 assign-to(pleb3, plebroom)
-assign-to(BITCH, plebroom)
+assign-to(plebian2, plebroom)
 assign-to(plebian, thepartyroom)

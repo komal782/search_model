@@ -85,53 +85,77 @@ public class Fact extends Violations implements ConstraintID {
     public Assignment getAssignment(Room room){
         return roomAssignmentMap.get(room);
     }
+
     public Assignment getAssignment(Person person){
         return personAssignmentMap.get(person);
     }
+
     public ArrayList<Room> getSpareRooms(){
         return new ArrayList<>(spareRooms);
     }
-    public Map<Person, Room> getHousing(){return new HashMap<>(housing);}
+
+    public Map<Person, Room> getHousing(){
+        return new HashMap<>(housing);
+    }
+
     public Map<Room, Person[]> getOccupants(){
         return new HashMap<>(occupants);
     }
+
     public void CalculateViolations(){
        SoftContraintsViolated = AllSoftConstraints(this);
     }
+
     public void clearPriorityQueue(){
         assignmentPriorityQueue.clear();
     }
-    public void addToPriorityQueue(Assignment assignment){
+
+    public void addToPriorityQueue(Assignment assignment) {
         assignmentPriorityQueue.add(assignment);
     }
-    public int getScore(){
+
+    public int getScore() {
         return score;
     }
-    public void setScore(int score){
+
+    public void setScore(int score) {
         this.score = score;
     }
+
     public void setAssignment(Assignment assignment){
         unordered_assignments.add(assignment);
+
     }
+
     public ArrayList<Assignment> getUnordered_assignments(){
         return new ArrayList<>(unordered_assignments);
+
     }
+
     public ArrayList<Assignment> getAssignments(){
        return new ArrayList<>(assignmentPriorityQueue);
+
     }
+
     public PriorityQueue<Assignment> getAssignmentPriorityQueue(){
         return new PriorityQueue<>(assignmentPriorityQueue);
     }
 
     public int getSoftConstraint(){
         return this.softConstraintViolated;
+
     }
+
     public void setSoftConstraint(int softConstaintViolated){
         this.softConstraintViolated = softConstaintViolated;
+
     }
+
     public int getSoftConstraintValue(){
         return this.softConstraintViolated;
+
     }
+
     public void setSoftConstraintValue(int softConstaintValue){
         this.softConstraintValue = softConstraintValue;
     }

@@ -31,7 +31,7 @@ public class SetBased {
         if (x > 2) {
             extend = fact.getSoftConstraint();
         }
-        extend = 4;
+        extend = 15;
         if (extend == 1){
             return Extensions.Rule1(fact);
         }
@@ -75,10 +75,10 @@ public class SetBased {
             return Extensions.Rule4(fact);
         }
         else if (extend == 15){
-            return Extensions.Rule4(fact);
+            return Extensions.Rule15(fact);
         }
         else {
-            return Extensions.Rule4(fact);
+            return Extensions.Rule16(fact);
         }
     }
 

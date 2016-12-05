@@ -42,7 +42,7 @@ public class Assignment implements ConstraintID {
             person2 = null;
         }
         else if (person2.equals(person))
-            person1 = null;
+            person2 = null;
     }
     public void setPerson1(Person person){
         person1 = person;

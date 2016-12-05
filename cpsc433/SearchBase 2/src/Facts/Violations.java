@@ -482,10 +482,10 @@ public abstract class Violations implements ConstraintID {
             return 0;
         }
         Environment environment = Environment.get();
-        Person person = assignment.getPerson()[0];
-        Person person1 = assignment.getPerson()[1];
+        Person[] person = assignment.getPerson();
 
-        if(!environment.e_works_with(person.getName(), person1.getName())){
+
+        if(!environment.e_works_with(person[0].getName(), person[1].getName())){
             return -3;
 
         }

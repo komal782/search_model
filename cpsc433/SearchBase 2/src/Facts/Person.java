@@ -85,6 +85,10 @@ public class Person{
 
 	public ArrayList<String> getProjects(){return new ArrayList<>(projects);}
 
+	public ArrayList<String> getCoworkers(){
+		return new ArrayList<>(coworkers);
+	}
+
 	public boolean hasCoworker(String p){
 		return coworkers.contains(p);
 	}
