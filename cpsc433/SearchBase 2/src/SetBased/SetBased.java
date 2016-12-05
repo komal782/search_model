@@ -24,11 +24,62 @@ public class SetBased {
 
     }
 
-    static public Fact ExtentionTest(Fact fact){
+    static public Fact Extension(Fact fact){
+        int x = (int) Math.floor(Math.random() * 10);
 
-        return Extensions.Rule4(fact);
-
-
+        int extend = (int) Math.floor(Math.random() * 16);;
+        if (x > 2) {
+            extend = fact.getSoftConstraint();
+        }
+        extend = 4;
+        if (extend == 1){
+            return Extensions.Rule1(fact);
+        }
+        else if (extend == 2){
+            return Extensions.Rule2(fact);
+        }
+        else if (extend == 3){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 4){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 5){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 6){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 7){
+            return Extensions.Rule7(fact);
+        }
+        else if (extend == 8){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 9){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 10){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 11){
+            return Extensions.Rule11(fact);
+        }
+        else if (extend == 12){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 13){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 14){
+            return Extensions.Rule4(fact);
+        }
+        else if (extend == 15){
+            return Extensions.Rule4(fact);
+        }
+        else {
+            return Extensions.Rule4(fact);
+        }
     }
 
 }

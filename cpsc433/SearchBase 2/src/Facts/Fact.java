@@ -30,6 +30,8 @@ public class Fact extends Violations implements ConstraintID {
     private Map<Room, Assignment> roomAssignmentMap;
     private Map<Person, Assignment> personAssignmentMap;
     private Map<Person, Room> housing;
+    private int softConstraintViolated = -1;
+    private int softConstraintValue = 0;
     //fact.getPerson returns room
     private int score;
     public Fact(ArrayList<Assignment> assignments, ArrayList<Room> spareRooms){
@@ -121,6 +123,16 @@ public class Fact extends Violations implements ConstraintID {
         return new PriorityQueue<>(assignmentPriorityQueue);
     }
 
-
-
+    public int getSoftConstraint(){
+        return this.softConstraintViolated;
+    }
+    public void setSoftConstraint(int softConstaintViolated){
+        this.softConstraintViolated = softConstaintViolated;
+    }
+    public int getSoftConstraintValue(){
+        return this.softConstraintViolated;
+    }
+    public void setSoftConstraintValue(int softConstaintValue){
+        this.softConstraintValue = softConstraintValue;
+    }
 }

@@ -73,15 +73,19 @@ public abstract class Violations implements ConstraintID {
             }
             Arrays.sort(scores);
             int violation = 0;
-            //System.out.println("\t\t\t\t\t\t\tbitches");
             for (i = 0; i < 16; i++){
                 if(scores[i].y == 0)
                     break;
                 violation += scores[i].y;
-                System.out.println("Violation[" + (i+1) + "]: " + scores[i].y + " Soft Constraint Violated: " + (scores[i].x + 1));
+                //System.out.println("Violation[" + (i+1) + "]: " + scores[i].y + " Soft Constraint Violated: " + (scores[i].x + 1));
             }
             assignment.setScore(violation); //overall value of the assignment in question
             assignment.setSoftContraint(scores[0].x);
+            int value = fact.getSoftConstraintValue();
+            if (value > scores[0].y){
+                fact.setSoftConstraint(scores[0].x);
+                fact.setSoftConstraintValue(scores[0].y);
+            }
             fact.addToPriorityQueue(assignment);
             overallViolation += violation;
         }

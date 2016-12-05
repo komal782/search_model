@@ -59,24 +59,30 @@ public class SisyphusI {
 			roomQ = Tree.buildTree(roomQ, personQ, fact);
 			fact.setAll();
 			long currentTime   = System.currentTimeMillis();
-			long runTime = 50;
+			long runTime = 1000;
 			fact.CalculateViolations();
 			int score = fact.getScore();
-			System.out.println("\t\t\t\t\t\t\tbitches");
-			//while (((currentTime - startTime) < runTime) || (score == 0)){
+			Fact bestFact = fact;
+			int bestScore = score;
+			System.out.println(fact.getScore());
+			while (((currentTime - startTime) < runTime) || (score == 0)){
 				//System.out.println(fact.getScore());
-				fact = SetBased.ExtentionTest(fact);
+				fact = SetBased.Extension(fact);
 				fact.setAll();
 				fact.CalculateViolations();
 				score = fact.getScore();
+				if (score > bestScore){
+					bestFact = fact;
+					bestScore = score;
+				}
 				currentTime = System.currentTimeMillis();
-			//}
+			}
 			//fact.CalculateViolations();
-		//	System.out.println(fact.getScore());
+			System.out.println(fact.getScore());
 //			PriorityQueue<Assignment> test = fact.getAssignmentPriorityQueue();
 //			Map<Room, Person[]> t = fact.getOccupants();
 //			Person[] d = t.get(test.remove().getRoom());
-			env.parseAssignments(fact);
+			env.parseAssignments(bestFact);
 //			fact.getScore();
 			//Fact fact2 = SetBased.ExtentionTest(fact);
 
@@ -157,7 +163,7 @@ public class SisyphusI {
 	
 	protected void printResults() {
 		String output;
-		output = getEnvironment().toString();
+		output = getEnvironment().allAssigned();
 		System.out.println(output);
 		try{
 			PrintWriter write = new PrintWriter(out, "UTF-8");

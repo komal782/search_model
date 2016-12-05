@@ -942,4 +942,19 @@ public class Environment extends PredicateReader implements SisyphusPredicates {
 			}
 		}
 	}
+	public String allAssigned(){
+		StringBuilder temp = new StringBuilder();
+		for (Assignment assignment : Assignments){
+			Person[] people = assignment.getPerson();
+			String room = assignment.getRoom().getName();
+			if (people.length == 2){
+				temp.append("assign-to(" + people[0].getName() + ", "  + room + ")\n");
+				temp.append("assign-to(" + people[1].getName() + ", "  + room + ")\n");
+			}
+			else {
+				temp.append("assign-to(" + assignment.toString() + ")\n");
+			}
+		}
+		return temp.toString();
+	}
 }

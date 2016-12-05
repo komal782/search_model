@@ -8,6 +8,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.StringJoiner;
+import java.lang.Math;
 
 /**
  * Created by shado on 11/30/2016.
@@ -65,7 +66,7 @@ public class Extensions {
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT2) {
+            //if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT2) {
                 Person groupHead = temp.getPerson()[0];
                 Room groupHeadRoom = temp.getRoom();
                 if (!temp.getPerson()[0].isGroupHead)
@@ -80,7 +81,19 @@ public class Extensions {
                     }
                 }
 
-            }
+           // }
+        }
+        return null;
+    }
+
+    static public Fact Rule3(Fact fact){
+        boolean solved = false;
+        Environment environment = Environment.get();
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        while (!priorityQueue.isEmpty()) {
+            Assignment temp = priorityQueue.remove();
+
         }
         return null;
     }
@@ -99,43 +112,43 @@ public class Extensions {
         ArrayList<Integer> mismatchSecretaryLocation = new ArrayList<Integer>();
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT4) {
-                Person[] secretary = temp.getPerson();
-                if (secretary.length == 1){
-                    if (secretary[0].isSecretary) {
-                        mismatchSecretary.add(temp);
-                        mismatchSecretaryLocation.add(0);
-                    }
-                }
-                else {
-                    if (secretary[0].isSecretary) {
-                        if (secretary[1].isSecretary)
-                            solved = true;
-                        else {
+            //if (fact.getSoftConstraint() == ConstraintID.SOFTCONSTRAINT4) {
+                //System.out.println(temp);
+                if (!temp.getRoom().founderRoom){
+                    Person[] secretary = temp.getPerson();
+                    if (secretary.length == 1){
+                        if (secretary[0].isSecretary) {
                             mismatchSecretary.add(temp);
                             mismatchSecretaryLocation.add(0);
                         }
                     }
-                    else if (secretary[1].isSecretary){
-                        mismatchSecretary.add(temp);
-                        mismatchSecretaryLocation.add(1);
+                    else {
+                        if (secretary[0].isSecretary) {
+                            if (!secretary[1].isSecretary){
+                                mismatchSecretary.add(temp);
+                                mismatchSecretaryLocation.add(0);
+                            }
+                        }
+                        else if (secretary[1].isSecretary){
+                            mismatchSecretary.add(temp);
+                            mismatchSecretaryLocation.add(1);
+                        }
                     }
                 }
-            }
+            //}
             assignments.add(temp);
         }
         boolean matchedSecretaries = false;
         int i = 0;
-        while(!matchedSecretaries){
+        int x = (int) Math.floor(Math.random() * mismatchSecretary.size());
+        while(!matchedSecretaries && (i < x)){
               if (i + 1 < mismatchSecretary.size()){
                   Assignment a1 = mismatchSecretary.get(i);
                   Assignment a2 = mismatchSecretary.get(i+1);
                   if (a1.getPerson().length == 1 && a2.getPerson().length == 1){
                       a1.addSecondPerson(a2.getPerson()[0]);
                       spareRooms.add(a2.getRoom());
-                      priorityQueue.remove(a2);
                       assignments.remove(a2);
-                      mismatchSecretary.remove(a2);
                   }
                   else if (a1.getPerson().length == 1){
                       a1.addSecondPerson(a2.getPerson()[mismatchSecretaryLocation.get(i+1)]);
@@ -145,20 +158,19 @@ public class Extensions {
                       a2.addSecondPerson(a1.getPerson()[mismatchSecretaryLocation.get(i)]);
                       a1.removePerson(a1.getPerson()[mismatchSecretaryLocation.get(i)]);
                   }
-                  else if (mismatchSecretaryLocation.get(i) == 1){
+                  else if (mismatchSecretaryLocation.get(i).equals(1)){
+                      //System.out.println("Assigment: " + a1 + " Person: " + mismatchSecretaryLocation.get(i));
                       swapPeople(mismatchSecretary.get(i), mismatchSecretary.get(i+1), mismatchSecretaryLocation.get(i) - 1, mismatchSecretaryLocation.get(i+1));
                   }
-                  else {
+                  else if (mismatchSecretaryLocation.get(i+1).equals(1)){
                       swapPeople(mismatchSecretary.get(i), mismatchSecretary.get(i+1), mismatchSecretaryLocation.get(i), mismatchSecretaryLocation.get(i+1)-1);
                   }
               }
               else {
                   matchedSecretaries = true;
               }
-              i++;
+              i += 2;
         }
-        assignments.clear();
-        priorityQueue.clear();
         return new Fact(assignments, spareRooms);
     }
 
@@ -190,48 +202,135 @@ public class Extensions {
      * @return
      */
     static public Fact Rule11(Fact fact) {
-        Environment environment = Environment.get();
-
-        boolean solved = false;
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         ArrayList<Room> spareRooms = fact.getSpareRooms();
         ArrayList<Assignment> mismatchSmoker = new ArrayList<Assignment>();
+        ArrayList<Integer> mismatchSmokerLocation = new ArrayList<Integer>();
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT11) {
-                Person[] smoker = temp.getPerson();
-                if (smoker.length == 1) {
-                    if (smoker[0].isSmoker) {
+            //if (fact.getSoftConstraint() == ConstraintID.SOFTCONSTRAINT11) {
+            //System.out.println(temp);
+            if (!temp.getRoom().founderRoom){
+                Person[] secretary = temp.getPerson();
+                if (secretary.length == 1){
+                    if (secretary[0].isSmoker) {
                         mismatchSmoker.add(temp);
+                        mismatchSmokerLocation.add(0);
                     }
-                } else {
-                    if (smoker[0].isSmoker) {
-                        if (smoker[1].isSmoker)
-                            solved = true;
-                        else {
+                }
+                else {
+                    if (secretary[0].isSmoker) {
+                        if (!secretary[1].isSmoker){
                             mismatchSmoker.add(temp);
+                            mismatchSmokerLocation.add(0);
                         }
-                    } else if (smoker[1].isSmoker) {
-                        mismatchSmoker.add(temp);
                     }
-
+                    else if (secretary[1].isSmoker){
+                        mismatchSmoker.add(temp);
+                        mismatchSmokerLocation.add(1);
+                    }
                 }
             }
+            //}
             assignments.add(temp);
         }
         boolean matchedSmokers = false;
         int i = 0;
-        while(!matchedSmokers){
+        int x = (int) Math.floor(Math.random() * mismatchSmoker.size());
+        while(!matchedSmokers && (i < x)){
             if (i + 1 < mismatchSmoker.size()){
-                swapPeople2(mismatchSmoker.get(i), mismatchSmoker.get(i+1));
+                Assignment a1 = mismatchSmoker.get(i);
+                Assignment a2 = mismatchSmoker.get(i+1);
+                if (a1.getPerson().length == 1 && a2.getPerson().length == 1){
+                    a1.addSecondPerson(a2.getPerson()[0]);
+                    spareRooms.add(a2.getRoom());
+                    assignments.remove(a2);
+                }
+                else if (a1.getPerson().length == 1){
+                    a1.addSecondPerson(a2.getPerson()[mismatchSmokerLocation.get(i+1)]);
+                    a2.removePerson(a2.getPerson()[mismatchSmokerLocation.get(i+1)]);
+                }
+                else if (a2.getPerson().length == 1){
+                    a2.addSecondPerson(a1.getPerson()[mismatchSmokerLocation.get(i)]);
+                    a1.removePerson(a1.getPerson()[mismatchSmokerLocation.get(i)]);
+                }
+                else if (mismatchSmokerLocation.get(i).equals(1)){
+                    swapPeople(mismatchSmoker.get(i), mismatchSmoker.get(i+1), mismatchSmokerLocation.get(i) - 1, mismatchSmokerLocation.get(i+1));
+                }
+                else if (mismatchSmokerLocation.get(i+1).equals(1)){
+                    swapPeople(mismatchSmoker.get(i), mismatchSmoker.get(i+1), mismatchSmokerLocation.get(i), mismatchSmokerLocation.get(i+1)-1);
+                }
             }
             else {
                 matchedSmokers = true;
             }
-            i++;
+            i += 2;
         }
         return new Fact(assignments, spareRooms);
+    }
+
+    static public Fact Rule15(Fact fact) {
+        Boolean solved = false;
+        Environment environment = Environment.get();
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        ArrayList<Room> spareRooms = fact.getSpareRooms();
+        while (!priorityQueue.isEmpty()) {
+            Assignment temp = priorityQueue.remove();
+            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT4) {
+                Person[] person = temp.getPerson();
+                if (person.length == 2){
+                    if (person[0].getProjects() != person[1].getProjects()){
+                        //get another assignment
+                        for (Person p : temp.getPerson()){
+                            //get check if that person has the same project as the other person
+                            if(person[0].getProjects() == p.getProjects()){
+                                //put person p into the room
+                                //remove that person[1] from the room
+                            }
+                            else if(person[1].getProjects() == p.getProjects()) {
+                                //put person p into the room
+                                //remove person[1] form the room
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        return null;
+    }
+
+    static public Fact Rule16(Fact fact) {
+        Boolean solved = false;
+        Environment environment = Environment.get();
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        ArrayList<Room> spareRooms = fact.getSpareRooms();
+        while (!priorityQueue.isEmpty()) {
+            Assignment temp = priorityQueue.remove();
+            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT4) {
+                if (temp.getRoom().getSize() == 2 && environment.e_small_room(temp.getRoom().getName()) == true){
+                    if(!spareRooms.isEmpty()){
+                        for (Room room : spareRooms){
+                            if (room.size()){
+
+                            }
+                        }
+                        //get a large or medium room then add people
+                        //remove the people
+                        // and ad these people to the spare room
+                    }
+                    else if (spareRooms.isEmpty()){
+                        //get one person move them into a small spare room
+                        //if not a small room then the next medium room
+                    }
+                }
+
+            }
+        }
+        return null;
     }
 
 
