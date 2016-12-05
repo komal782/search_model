@@ -65,9 +65,9 @@ public class SisyphusI {
 			Fact bestFact = fact;
 			int bestScore = score;
 			System.out.println(fact.getScore());
-			while (((currentTime - startTime) < runTime) || (score == 0)){
+			//while (((currentTime - startTime) < runTime) || (score == 0)){
 				//System.out.println(fact.getScore());
-				fact = SetBased.Extension(fact);
+				//fact = SetBased.Extension(fact);
 				fact.setAll();
 				fact.CalculateViolations();
 				score = fact.getScore();
@@ -76,7 +76,7 @@ public class SisyphusI {
 					bestScore = score;
 				}
 				currentTime = System.currentTimeMillis();
-			}
+			//}
 			//fact.CalculateViolations();
 			System.out.println(fact.getScore());
 //			PriorityQueue<Assignment> test = fact.getAssignmentPriorityQueue();

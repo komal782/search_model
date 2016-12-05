@@ -693,17 +693,35 @@ public class Environment extends PredicateReader implements SisyphusPredicates {
 	public static String h_assign_to = "query or assert person <id1> is assigned to <id2>";
 	public void a_assign_to(String p, String room) throws Exception {
 		Person tempPerson = Persons.get(p);
+
 		if (tempPerson == null){
 			tempPerson = new Person(p);
 			Persons.put(p, tempPerson);
+			tempPerson.isFounder = false;
 		}
+		if (tempPerson.isFounder)
+			throw new Exception("Person is already assigned a room.");
 		tempPerson.isFounder = true;
 		Room tempRoom = Rooms.get(room);
 		if (tempRoom == null){
 			throw new Exception("Room does not exist.");
 		}
-		tempRoom.founderRoom = true;
-		Assignment temp = new Assignment(tempRoom, tempPerson);
+		Assignment temp = null;
+		if (tempRoom.founderRoom){
+			for (Assignment assignment : Assignments){
+				if (assignment.getRoom().equals(tempRoom)){
+					temp = assignment;
+					temp.addSecondPerson(tempPerson);
+					break;
+				}
+			}
+		}
+		else {
+			temp = new Assignment(tempRoom, tempPerson);
+			tempRoom.founderRoom = true;
+		}
+		if (temp == null)
+			throw new Exception("Something incredible happened.");
 		if (!Assignments.contains(temp)){
 			Assignments.add(temp);
 		}

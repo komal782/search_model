@@ -152,17 +152,23 @@ public abstract class Violations implements ConstraintID {
             for (String grp : person.getGroupsHeaded()){
                 closePeople = 0;
                 ArrayList<Person> group = environment.getGroups().get(grp);
+                //System.out.println(group.get(0));
                 for (String closeRoom : closeRooms){
                     Person[] plebs = fact.getOccupants().get(closeRoom);
-                    if (plebs != null)
-                    {
-                        for (Person pleb : plebs) {
-                            if (pleb != null && group.contains(pleb.getName()))
+                    //if (plebs != null)
+                    //{
+                    //System.out.println(plebs[0]);
+                    if (plebs != null) {
+                        if (group.contains(plebs[0]))
+                            closePeople++;
+                        if (plebs.length == 2)
+                            if (group.contains(plebs[1]))
                                 closePeople++;
-                        }
+
+                        //}
                     }
                 }
-                penalty += -2 * (group.size() - closePeople);
+                penalty += -2 * (group.size() - closePeople - 1);
             }
             return penalty;
         }
@@ -313,7 +319,8 @@ public abstract class Violations implements ConstraintID {
                 ArrayList<Person> groupMembers = environment.getGroups().get(grps);
                 for (Person member : groupMembers){
                     if(!environment.e_close(fact.getHousing().get(member).getName(), room.getName())){
-                        penalty -= 2;
+                        if (!person.equals(member))
+                            penalty -= 2;
                     }
                 }
             }
@@ -470,7 +477,6 @@ public abstract class Violations implements ConstraintID {
             return 0;
         }
         else{
-            assignment.setScore(-4 + assignment.getScore());
             return -4;
         }
 
@@ -490,11 +496,6 @@ public abstract class Violations implements ConstraintID {
 
         }
         return 0;
-
-
-
-
-
     }
 
     protected int SoftConstraint16(Assignment assignment){

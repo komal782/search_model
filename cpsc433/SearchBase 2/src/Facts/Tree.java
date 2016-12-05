@@ -23,24 +23,9 @@ public class Tree extends Violations {
      */
 
     public static ArrayDeque<Room> buildTree(ArrayDeque<Room> rooms, ArrayDeque<Person> persons, Fact fact){
-        /*while (!persons.isEmpty()){
-            Person person = persons.getFirst();
-            if (!person.isFounder){
-
-            }
-
-
-            System.out.println(person.getName());
-        }
-
-
-
-        return null;*/
-
-
         //Take a person
         //Take a room
-        if(!persons.isEmpty()){
+        while (!persons.isEmpty()){
             Room room;
             if (rooms.isEmpty())
                 return null;
@@ -55,14 +40,32 @@ public class Tree extends Violations {
             }*/
             if (room.founderRoom || person.isFounder){
                 if (room.founderRoom){
-                    persons.add(person);
+                    if (!person.isFounder)
+                        persons.add(person);
+                    else{
+                        Assignment a1 = fact.getAssignment(person);
+                        Person[] people = a1.getPerson();
+                        persons.remove(people[0]);
+                        if (people.length == 2)
+                            persons.remove(people[1]);
+                        rooms.remove(a1.getRoom());
+                    }
                     Person[] founders = fact.getOccupants().get(room);
                     persons.remove(founders[0]);
                     if (founders.length == 2)
                         persons.remove(founders[1]);
                 }
                 if (person.isFounder){
-                    rooms.add(room);
+                    if (!room.founderRoom)
+                        rooms.add(room);
+                    else{
+                        Assignment a1 = fact.getAssignment(room);
+                        Person[] people = a1.getPerson();
+                        persons.remove(people[0]);
+                        if (people.length == 2)
+                            persons.remove(people[1]);
+                        rooms.remove(room);
+                    }
                     Room founderRoom = fact.getHousing().get(person);
                     Person[] founders = fact.getOccupants().get(founderRoom);
                     if (founders.length == 2){
@@ -104,7 +107,7 @@ public class Tree extends Violations {
             }
 
 
-            buildTree(rooms, persons, fact);
+           // buildTree(rooms, persons, fact);
 
 
         }
