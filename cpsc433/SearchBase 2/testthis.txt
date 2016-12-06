@@ -1,0 +1,14 @@
+heads_project(rae, q)
+project(komal, q)
+secretary(komal)
+large_project(q)
+person(pleb)
+person(pleb1)
+
+small-room(k)
+small-room(w)
+small-room(l)
+
+close(k, w)
+
+assign-to(rae, k)
