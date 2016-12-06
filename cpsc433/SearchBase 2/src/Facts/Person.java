@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Person{
 	private String name;
-	private String roomName;
 	private ArrayList<String> coworkers;
 	private ArrayList<String> groups;
 	private ArrayList<String> projects;
@@ -22,14 +21,6 @@ public class Person{
 		projects = new ArrayList<String>();
 		groupHead = new ArrayList<String>();
 		projectHeads = new ArrayList<String>();
-	}
-
-	public String getRoomName(){
-		return roomName;
-	}
-
-	public void setRoomName(String name){
-		roomName = name;
 	}
 
 	public void worksWith(String person){

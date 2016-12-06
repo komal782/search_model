@@ -1,4 +1,4 @@
-secretary(pleb3)
+person(pleb3)
 person(plebian)
 person(plebian2)
 secretary(BITCH)

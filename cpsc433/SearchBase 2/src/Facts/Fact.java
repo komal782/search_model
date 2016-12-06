@@ -23,7 +23,7 @@ public class Fact extends Violations implements ConstraintID {
         }
     };
     private PriorityQueue<Assignment> assignmentPriorityQueue;
-    private ArrayList<Room> spareRooms;
+    private ArrayDeque<Room> spareRooms;
     private ArrayList<Assignment> unordered_assignments;
     private Tuple SoftContraintsViolated;
     private Map<Room, Person[]> occupants;
@@ -37,7 +37,7 @@ public class Fact extends Violations implements ConstraintID {
     public Fact(ArrayList<Assignment> assignments, ArrayList<Room> spareRooms){
         assignmentPriorityQueue = new PriorityQueue<>(comparator);
         unordered_assignments = new ArrayList<>(assignments);
-        this.spareRooms = new ArrayList<>(spareRooms);
+        this.spareRooms = new ArrayDeque<>(spareRooms);
         initOccupantsHousing();
     }
 
@@ -60,6 +60,9 @@ public class Fact extends Violations implements ConstraintID {
             }
         }
 
+    }
+    public void setSpareRooms(ArrayDeque<Room> rooms){
+        spareRooms = rooms;
     }
 
     private void initOccupantsHousing(){
@@ -158,5 +161,13 @@ public class Fact extends Violations implements ConstraintID {
 
     public void setSoftConstraintValue(int softConstaintValue){
         this.softConstraintValue = softConstraintValue;
+    }
+
+    public String toString(){
+        StringBuilder temp = new StringBuilder();
+        for (Assignment ass : unordered_assignments){
+            temp.append(ass.toString());
+        }
+        return temp.toString();
     }
 }

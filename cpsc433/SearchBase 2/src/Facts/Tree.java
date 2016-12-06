@@ -27,9 +27,14 @@ public class Tree extends Violations {
         //Take a room
         while (!persons.isEmpty()){
             Room room;
+            int randomNumber = (int) Math.floor(Math.random() * 3);
             if (rooms.isEmpty())
                 return null;
-            room = rooms.remove();
+            room = rooms.pop();
+            for (int i = 0; i < randomNumber; i++){
+                rooms.add(room);
+                room = rooms.pop();
+            }
             Person person = persons.remove();
             //System.out.println((true) ? " \tPerson: " + person.getName() : "");
             /*if (person.isFounder){
@@ -87,8 +92,8 @@ public class Tree extends Violations {
                 person.setRoomName(room.getName());
                 Person person2 = persons.element();
                 //System.out.println(" Person: " + person2.getName());
-                if (!person2.isFounder){
-                    if(!person2.isGroupHead || !person2.isManager || !person2.projectHead){
+                if (!person2.isFounder) {
+                    if (!person2.isGroupHead || !person2.isManager || !person2.projectHead) {
                         persons.remove();
                         person2.setRoomName(room.getName());
                         Assignment temp = new Assignment(room, person);
@@ -96,8 +101,7 @@ public class Tree extends Violations {
                         fact.setAssignment(temp);
                         //fact.addToPriorityQueue(temp);
                     }
-                }
-                else {
+                } else {
                     persons.add(person);
                     rooms.add(room);
                     persons.remove();
@@ -105,6 +109,8 @@ public class Tree extends Violations {
                     rooms.remove(founderRoom);
                 }
             }
+
+
 
 
            // buildTree(rooms, persons, fact);

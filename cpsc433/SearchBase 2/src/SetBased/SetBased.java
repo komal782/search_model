@@ -27,11 +27,11 @@ public class SetBased {
     static public Fact Extension(Fact fact){
         int x = (int) Math.floor(Math.random() * 10);
 
-        int extend = (int) Math.floor(Math.random() * 16);;
+        int extend = (int) Math.floor(Math.random() * 16);
         if (x > 2) {
             extend = fact.getSoftConstraint();
         }
-        extend = 4;
+        extend = (extend > 8) ? 16 : 4;
         if (extend == 1){
             return Extensions.Rule1(fact);
         }

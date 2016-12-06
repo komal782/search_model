@@ -711,6 +711,8 @@ public class Environment extends PredicateReader implements SisyphusPredicates {
 			for (Assignment assignment : Assignments){
 				if (assignment.getRoom().equals(tempRoom)){
 					temp = assignment;
+					if (assignment.getPerson().length == 2)
+						throw new Exception("Kremer tried to break our hearts.");
 					temp.addSecondPerson(tempPerson);
 					break;
 				}
@@ -953,6 +955,8 @@ public class Environment extends PredicateReader implements SisyphusPredicates {
 	}
 
 	public void parseAssignments(Fact fact){
+		if (fact == null)
+			return;
 		ArrayList<Assignment> factAssignments = fact.getUnordered_assignments();
 		for (Assignment assignment : factAssignments){
 			if (!Assignments.contains(assignment)){

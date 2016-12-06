@@ -45,6 +45,8 @@ public class SisyphusI {
 	}
 
 	protected void run() {
+
+
 		long startTime = System.currentTimeMillis();
 		env = getEnvironment();
 
@@ -53,32 +55,65 @@ public class SisyphusI {
 		if (args.length>0) {
 			fromFile = args[0];
 			env.fromFile(fromFile);
-			ArrayDeque<Person> personQ = new ArrayDeque<>(env.getPersons().values()); //initial shit
-			ArrayDeque<Room> roomQ = new ArrayDeque<>(env.getRooms().values()); //intitial shit
-			Fact fact = new Fact(env.getAssignments(), new ArrayList<>(roomQ));
-			roomQ = Tree.buildTree(roomQ, personQ, fact);
-			fact.setAll();
-			long currentTime   = System.currentTimeMillis();
-			long runTime = 1000;
-			fact.CalculateViolations();
-			int score = fact.getScore();
-			Fact bestFact = fact;
-			int bestScore = score;
-			System.out.println(fact.getScore());
-			//while (((currentTime - startTime) < runTime) || (score == 0)){
-				//System.out.println(fact.getScore());
-				//fact = SetBased.Extension(fact);
+			ArrayDeque<Fact> Facts = new ArrayDeque<>();
+			int factsToMake = 1;
+			Fact bestFact = null;
+			int bestScore = Integer.MIN_VALUE;
+			for (int i = 0; i < factsToMake; i++){
+				ArrayDeque<Person> personQ = new ArrayDeque<>(env.getPersons().values()); //initial shit
+				ArrayDeque<Room> roomQ = new ArrayDeque<>(env.getRooms().values()); //initial shit
+				Fact fact = new Fact(env.getAssignments(), new ArrayList<>(roomQ));
+				roomQ = Tree.buildTree(roomQ, personQ, fact);
+				fact.setSpareRooms(roomQ);
 				fact.setAll();
+				Facts.push(fact);
+				ArrayList<Assignment> assignment = fact.getAssignments();
+				for (Assignment ass : assignment){
+					Person[] p = ass.getPerson();
+					if(p.length > 2){
+						continue;
+					}
+					if (p.length == 2) {
+						if ((p[0].isManager || p[1].isManager) && p.length == 2){
+							//build tree
+							continue;
+						}
+						else if ((p[0].isGroupHead || p[1].isGroupHead) && p.length == 2){
+							//build tree
+							continue;
+						}
+					}
+
+				}
 				fact.CalculateViolations();
-				score = fact.getScore();
+				int score = fact.getScore();
+				Room andy = new Room("Andy");
+				andy.founderRoom = true;
+				System.out.println(fact);
 				if (score > bestScore){
 					bestFact = fact;
 					bestScore = score;
 				}
+			}
+			long currentTime   = System.currentTimeMillis();
+			long runTime = 100;
+			//System.out.println(fact.getScore());
+			int score = -1;
+			while (((currentTime - startTime) < runTime) && (score != 0)){
+				Facts.push(SetBased.Extension(Facts.pop()));
+				Facts.peekLast().setAll();
+				Facts.peekLast().CalculateViolations();
+				score = Facts.peekLast().getScore();
+				System.out.println(Facts.peekLast().getScore());
+				if (score > bestScore){
+					bestFact = Facts.peekLast();
+					bestScore = score;
+				}
+				//
 				currentTime = System.currentTimeMillis();
-			//}
+			}
 			//fact.CalculateViolations();
-			System.out.println(fact.getScore());
+			//System.out.println(fact.getScore());
 //			PriorityQueue<Assignment> test = fact.getAssignmentPriorityQueue();
 //			Map<Room, Person[]> t = fact.getOccupants();
 //			Person[] d = t.get(test.remove().getRoom());

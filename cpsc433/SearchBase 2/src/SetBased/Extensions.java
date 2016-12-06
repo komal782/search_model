@@ -2,6 +2,7 @@ package SetBased;
 
 import Facts.*;
 import com.sun.tools.doclint.Env;
+import cpsc433.SisyphusPredicates;
 
 import java.lang.reflect.Array;
 import java.util.ArrayDeque;
@@ -25,7 +26,7 @@ public class Extensions {
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
-            if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT1) {
+            //if (temp.getSoftContraint() == ConstraintID.SOFTCONSTRAINT1) {
                 for (Room room : spareRooms) {
                     if (room.getSize() == 3) {
                         spareRooms.remove(room);
@@ -45,7 +46,7 @@ public class Extensions {
                         }
                     }
                 }
-            }
+            //}
             if (!solved)
                 assignments.add(temp);
         }
@@ -93,10 +94,50 @@ public class Extensions {
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         while (!priorityQueue.isEmpty()) {
             Assignment temp = priorityQueue.remove();
+            if (!temp.getRoom().founderRoom) {
+                Person groupHead = temp.getPerson()[0];
+                Room groupHeadRoom = temp.getRoom();
+                if (temp.getPerson()[0].isGroupHead) {
+                    ArrayList<String> groups = groupHead.getGroupsHeaded();
+                    for (String room : groupHeadRoom.getCloseTo()){
+                        Room memberRoom = environment.getRoom(room);
+                        if (!memberRoom.founderRoom){
+                            Assignment closeAssignment = fact.getAssignment(memberRoom);
+                            Person[] closePeople = closeAssignment.getPerson();
+                            boolean personOneInGroup = false;
+                            boolean personTwoInGroup = false;
+                            for (String grp : groups){
+                                if (closePeople[0].isInGroup(grp))
+                                    personOneInGroup = true;
+                                if (closePeople.length == 2)
+                                    if (closePeople[1].isInGroup(grp))
+                                        personTwoInGroup = true;
+                                if (personOneInGroup && personTwoInGroup)
+                                    break;
+                            }
 
+                        }
+
+                    }
+
+                    for (String group : groupHead.getGroupsHeaded()) {
+                        ArrayList<Person> groupMembers = environment.getGroup(group);
+                        for (Person member : groupMembers) {
+                            if (!member.equals(groupHead)){
+                                Room memberRoom = fact.getHousing().get(member);
+                                if (!groupHeadRoom.hasClose(memberRoom.getName())) {
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            assignments.add(temp);
         }
         return null;
     }
+
 
     /**
      * secretaries share a room with each other
@@ -105,6 +146,7 @@ public class Extensions {
      */
     static public Fact Rule4(Fact fact){
         Boolean solved = false;
+        System.out.print("Rule 4: ");
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         ArrayList<Room> spareRooms = fact.getSpareRooms();
@@ -174,8 +216,24 @@ public class Extensions {
         return new Fact(assignments, spareRooms);
     }
 
+    static public Fact Rule5(Fact fact) {
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        while (!priorityQueue.isEmpty()) {
+                Assignment temp = priorityQueue.remove();
+                Person[] person = temp.getPerson();
+                if (person.length ==2 ){
+                    if(person[0].isManager || person[1].isManager) {
+                        //get secretary in the same group as the manager
+                        //check if the secretary is close
+                        //if not then move it to  the next place
+                    }
+                }
+        }
+        return null;
+    }
+
     /**
-     * swaps the person to be closer to their manager or group
+     * Swaps the person to be closer to their manager or group
      * @param fact
      * @return
      */
@@ -212,21 +270,21 @@ public class Extensions {
             //if (fact.getSoftConstraint() == ConstraintID.SOFTCONSTRAINT11) {
             //System.out.println(temp);
             if (!temp.getRoom().founderRoom){
-                Person[] secretary = temp.getPerson();
-                if (secretary.length == 1){
-                    if (secretary[0].isSmoker) {
+                Person[] smoker = temp.getPerson();
+                if (smoker.length == 1){
+                    if (smoker[0].isSmoker) {
                         mismatchSmoker.add(temp);
                         mismatchSmokerLocation.add(0);
                     }
                 }
                 else {
-                    if (secretary[0].isSmoker) {
-                        if (!secretary[1].isSmoker){
+                    if (smoker[0].isSmoker) {
+                        if (!smoker[1].isSmoker){
                             mismatchSmoker.add(temp);
                             mismatchSmokerLocation.add(0);
                         }
                     }
-                    else if (secretary[1].isSmoker){
+                    else if (smoker[1].isSmoker){
                         mismatchSmoker.add(temp);
                         mismatchSmokerLocation.add(1);
                     }
@@ -270,6 +328,100 @@ public class Extensions {
         return new Fact(assignments, spareRooms);
     }
 
+    /**
+     * hacker is with hackers
+     * @param fact
+     * @return
+     */
+    static public Fact Rule13(Fact fact) {
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        ArrayList<Room> spareRooms = fact.getSpareRooms();
+        ArrayList<Assignment> mismatchHacker = new ArrayList<Assignment>();
+        ArrayList<Integer> mismatchHackerLocation = new ArrayList<Integer>();
+        while (!priorityQueue.isEmpty()) {
+            Assignment temp = priorityQueue.remove();
+            //if (fact.getSoftConstraint() == ConstraintID.SOFTCONSTRAINT11) {
+            //System.out.println(temp);
+            if (!temp.getRoom().founderRoom){
+                Person[] hacker = temp.getPerson();
+                if (hacker.length == 1){
+                    if (hacker[0].isHacker) {
+                        mismatchHacker.add(temp);
+                        mismatchHackerLocation.add(0);
+                    }
+                }
+                else {
+                    if (hacker[0].isHacker) {
+                        if (!hacker[1].isHacker){
+                            mismatchHacker.add(temp);
+                            mismatchHackerLocation.add(0);
+                        }
+                    }
+                    else if (hacker[1].isHacker){
+                        mismatchHacker.add(temp);
+                        mismatchHackerLocation.add(1);
+                    }
+                }
+            }
+            //}
+            assignments.add(temp);
+        }
+        boolean matchedHacker = false;
+        int i = 0;
+        int x = (int) Math.floor(Math.random() * mismatchHacker.size());
+        while(!matchedHacker && (i < x)){
+            if (i + 1 < mismatchHacker.size()){
+                Assignment a1 = mismatchHacker.get(i);
+                Assignment a2 = mismatchHacker.get(i+1);
+                if (a1.getPerson().length == 1 && a2.getPerson().length == 1){
+                    a1.addSecondPerson(a2.getPerson()[0]);
+                    spareRooms.add(a2.getRoom());
+                    assignments.remove(a2);
+                }
+                else if (a1.getPerson().length == 1){
+                    a1.addSecondPerson(a2.getPerson()[mismatchHackerLocation.get(i+1)]);
+                    a2.removePerson(a2.getPerson()[mismatchHackerLocation.get(i+1)]);
+                }
+                else if (a2.getPerson().length == 1){
+                    a2.addSecondPerson(a1.getPerson()[mismatchHackerLocation.get(i)]);
+                    a1.removePerson(a1.getPerson()[mismatchHackerLocation.get(i)]);
+                }
+                else if (mismatchHackerLocation.get(i).equals(1)){
+                    swapPeople(mismatchHacker.get(i), mismatchHacker.get(i+1), mismatchHackerLocation.get(i) - 1, mismatchHackerLocation.get(i+1));
+                }
+                else if (mismatchHackerLocation.get(i+1).equals(1)){
+                    swapPeople(mismatchHacker.get(i), mismatchHacker.get(i+1), mismatchHackerLocation.get(i), mismatchHackerLocation.get(i+1)-1);
+                }
+            }
+            else {
+                matchedHacker = true;
+            }
+            i += 2;
+        }
+        return new Fact(assignments, spareRooms);
+    }
+/*
+    static public Fact Rule14(Fact fact) {
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
+        Assignment temp = priorityQueue.remove();
+        ArrayList<Room> spareRooms = fact.getSpareRooms();
+        Person[] person = temp.getPerson();
+
+        if (person.length == 2){
+            if (spareRooms.size() > 1){
+                String room = person[0].getRoomName();
+                Room rm = assignments.remove(temp);
+                assignments.add(fact.getAssignment(person[0]));
+
+                //take one person put into a spare room
+            }
+            assignments.add(temp);
+        }
+        return new Fact(assignments, spareRooms);
+    }
+*/
     static public Fact Rule15(Fact fact) {
         Boolean solved = false;
         Environment environment = Environment.get();
@@ -337,6 +489,7 @@ public class Extensions {
     }
 
     static public Fact Rule16(Fact fact) {
+        System.out.print("Rule 16: ");
         Environment environment = Environment.get();
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
@@ -407,6 +560,7 @@ public class Extensions {
         a1.setRoom(room2);
         a2.setRoom(room);
     }
+
     private static void swapPeople(Assignment a1, Assignment a2, int person, int person2){
         Person[] people = a1.getPerson();
         Person[] people1 = a2.getPerson();
