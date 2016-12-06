@@ -83,19 +83,16 @@ public class Tree extends Violations {
                 }
             }
             else if(persons.isEmpty() || person.isGroupHead || person.isManager || person.projectHead){
-                person.setRoomName(room.getName());
                 Assignment temp = new Assignment(room,person);
                 fact.setAssignment(temp);
                 //fact.addToPriorityQueue(temp);
             }
             else {
-                person.setRoomName(room.getName());
                 Person person2 = persons.element();
                 //System.out.println(" Person: " + person2.getName());
                 if (!person2.isFounder) {
                     if (!person2.isGroupHead || !person2.isManager || !person2.projectHead) {
                         persons.remove();
-                        person2.setRoomName(room.getName());
                         Assignment temp = new Assignment(room, person);
                         temp.setPerson2(person2);
                         fact.setAssignment(temp);

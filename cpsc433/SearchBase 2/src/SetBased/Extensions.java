@@ -75,10 +75,9 @@ public class Extensions {
                 for (String group : groupHead.getGroupsHeaded()){
                     ArrayList<Person> groupMembers = environment.getGroup(group);
                     for (Person member : groupMembers){
-                        String memberRoom = member.getRoomName();
-                        if (!groupHeadRoom.hasClose(memberRoom)){
-                            break;
-                        }
+                       // if (!groupHeadRoom.hasClose(memberRoom)){
+                         //   break;
+                        //}
                     }
                 }
 
@@ -115,11 +114,34 @@ public class Extensions {
                                 if (personOneInGroup && personTwoInGroup)
                                     break;
                             }
+                            Person personToSwap;
+                            boolean swap = false;
+                            if (!personOneInGroup && !personTwoInGroup){
+                                swap = true;
+                                int randomPerson = 0;
+                                if (closePeople.length == 2){
+                                    randomPerson = (int) Math.floor(Math.random() * 10);
+                                    randomPerson = (randomPerson > 5) ? 1: 0;
+                                }
+                                personToSwap = closePeople[randomPerson];
+                            }
+                            else if (!personOneInGroup){
+                                swap = true;
+                                personToSwap = closePeople[0];
+                            }
+                            else if (!personTwoInGroup){
+                                if (closePeople.length == 2) {
+                                    swap = true;
+                                    personToSwap = closePeople[0];
+                                }
+                            }
+                            if (swap){
 
+                            }
                         }
 
                     }
-
+                    /*
                     for (String group : groupHead.getGroupsHeaded()) {
                         ArrayList<Person> groupMembers = environment.getGroup(group);
                         for (Person member : groupMembers) {
@@ -130,7 +152,7 @@ public class Extensions {
                                 }
                             }
                         }
-                    }
+                    }*/
                 }
             }
             assignments.add(temp);
@@ -146,7 +168,7 @@ public class Extensions {
      */
     static public Fact Rule4(Fact fact){
         Boolean solved = false;
-        System.out.print("Rule 4: ");
+     //   System.out.print("Rule 4: ");
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();
         ArrayList<Room> spareRooms = fact.getSpareRooms();
@@ -489,7 +511,7 @@ public class Extensions {
     }
 
     static public Fact Rule16(Fact fact) {
-        System.out.print("Rule 16: ");
+   //     System.out.print("Rule 16: ");
         Environment environment = Environment.get();
         ArrayList<Assignment> assignments = new ArrayList<>();
         PriorityQueue<Assignment> priorityQueue = fact.getAssignmentPriorityQueue();

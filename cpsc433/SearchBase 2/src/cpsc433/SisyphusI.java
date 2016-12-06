@@ -56,7 +56,7 @@ public class SisyphusI {
 			fromFile = args[0];
 			env.fromFile(fromFile);
 			ArrayDeque<Fact> Facts = new ArrayDeque<>();
-			int factsToMake = 1;
+			int factsToMake = 2;
 			Fact bestFact = null;
 			int bestScore = Integer.MIN_VALUE;
 			for (int i = 0; i < factsToMake; i++){
@@ -100,7 +100,7 @@ public class SisyphusI {
 			//System.out.println(fact.getScore());
 			int score = -1;
 			while (((currentTime - startTime) < runTime) && (score != 0)){
-				Facts.push(SetBased.Extension(Facts.pop()));
+				Facts.add(SetBased.Extension(Facts.pop()));
 				Facts.peekLast().setAll();
 				Facts.peekLast().CalculateViolations();
 				score = Facts.peekLast().getScore();
